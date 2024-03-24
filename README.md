@@ -4,15 +4,15 @@
 <br><br>
 Initial Release 1.0
 <br><br>
-To exit on Linux simply press F11
-To exit on Android simply close the window
+To exit on Linux simply press F11<br>
+To exit on Android simply close the window<br>
 <br><br>
--Sound: Click/Tap on the screen to turn the sound on/off
--CPU: Low usage
+-Sound: Click/Tap on the screen to turn the sound on/off<br>
+-CPU: Low usage<br>
 <br><br>
 Requirements: 
 <br><br>
-Android 7+
-Linux AMD64 Ubuntu or Debian based OS
+Android 7+<br>
+Linux AMD64 Ubuntu or Debian based OS<br>
 <br><br>
 ![preview](https://github.com/lexterror/8-bit-pixel-fireplace-android-linux/assets/16135535/d6d7cecb-af67-4047-a32a-19bcbb385985)
