@@ -10,6 +10,8 @@ To exit on Android simply close the window<br>
 -Sound: Click/Tap on the screen to turn the sound on/off<br>
 -CPU: Low usage<br>
 -True random and infinite animation (not a video or animated gif)
+-Doom fire algorithm used
+-Written in JS (Could easily be rewritten in any other language or using a different framework)
 <br><br>
 Requirements: 
 <br><br>
@@ -18,7 +20,7 @@ Linux AMD64 Ubuntu or Debian based OS<br>
 <br><br>
 DEB/APK is in the release section of this repository
 <br><br>
-![pixelfireplace-preview-ezgif com-crop](https://github.com/lexterror/8-bit-pixel-fireplace-android-linux/assets/16135535/af4df506-e931-4a41-a99d-6d5af29f5f2d)
+![hdpreview-ezgif com-video-to-gif-converter](https://github.com/lexterror/8-bit-pixel-fireplace-android-linux/assets/16135535/55055c6f-a9d9-4dd6-b784-4159ba3f6f06)
 <br>
 
 
