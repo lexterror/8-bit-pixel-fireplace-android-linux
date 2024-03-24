@@ -9,9 +9,9 @@ To exit on Android simply close the window<br>
 <br><br>
 -Sound: Click/Tap on the screen to turn the sound on/off<br>
 -CPU: Low usage<br>
--True random and infinite animation (not a video or animated gif)
--Doom fire algorithm used
--Written in JS (Could easily be rewritten in any other language or using a different framework)
+-True random and infinite animation (not a video or animated gif)<br>
+-Doom fire algorithm used<br>
+-Written in JS (Could easily be rewritten in any other language or using a different framework)<br>
 <br><br>
 Requirements: 
 <br><br>
