@@ -102,7 +102,7 @@ function fireplaceMove() {
   bounce = getRandomArbitrary(0, 0);
   bouncex = getRandomArbitrary(-10, -10);
   retro = getRandomArbitrary(0.7, 0.7);
-	for (var x = (1 + left); x < (15 - right); x++) {
+	for (var x = 0; x < 16; x++) {
 	  
 		for (var y = (0); y < (16); y++) {
 		  
@@ -120,7 +120,7 @@ function fireplaceMove() {
 
       if (burst == 0)
       {
-			if (id > 5 && id < 16) {
+			if (id > 4 && id < 16) {
 				var r = Math.random();
 				var retro2 = 0.9;
 				if (r < retro2) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 4 + 1) + 4 + shine;
@@ -133,7 +133,7 @@ function fireplaceMove() {
       }		
       if (burst == 1)
       {
-      if (id > -1 && id < 16) {
+      if (id > 4 && id < 16) {
 				var r = Math.random();
 				
 				if (r < 256) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 4 + 1) + 4 + shine;
@@ -189,7 +189,7 @@ fireplaceArray[239] = 0;
 fireplaceArray[224] = 0;
 fireplaceArray[223] = 0;
 fireplaceArray[208] = 0;
-fireplaceArray[238] = between;
+//fireplaceArray[238] = between;
 
 
 
@@ -486,21 +486,21 @@ function fireplaceDraw() {
 			modhue = originalhue;
 			modsats = originalsats;
                         var modl = originallightness.replace("%", "");
-                        var modl2 = parseInt(modl) - 9;
+                        var modl2 = parseInt(modl) - 30;
 			modlight = modl2.toString() + "%";
 	   		}
 	     if (y == 14 && x > 1 && x < 14) { 
 			modhue = originalhue;
 			modsats = originalsats;
                         var modl = originallightness.replace("%", "");
-                        var modl2 = parseInt(modl) - 6;
+                        var modl2 = parseInt(modl) - 20;
 			modlight = modl2.toString() + "%";
 	   		}
 	   			     if (y == 13 && x > 4 && x < 12) { 
 			modhue = originalhue;
 			modsats = originalsats;
                         var modl = originallightness.replace("%", "");
-                        var modl2 = parseInt(modl) - 3;
+                        var modl2 = parseInt(modl) - 10;
 			modlight = modl2.toString() + "%";
 	   		}
 
