@@ -68,7 +68,7 @@ reqAniFrame = (function() {
 })();
 
 var fireplaceArray = new Array(256);
-var fireplaceColors = ['0%', '3%', '6%', '9%', '0%', '55%', '55%', '55%', '55%', '55%', '0%', '0%', '0%', '0%', '0%', '0%'];
+var fireplaceColors = ['0%', '5%', '6%', '7%', '0%', '55%', '55%', '55%', '55%', '55%', '0%', '0%', '0%', '0%', '0%', '1%'];
 var poligon = ""
 
 //fireplacePosition = (display.width - display.height) / 2;
@@ -189,7 +189,7 @@ function fireplaceMove() {
 		}
 	}
 woodsy++;
-if (woodsy == 4)
+if (woodsy == 5)
 woodsy = 1;
 	burst = 0;
 	LRM++;
@@ -282,7 +282,7 @@ woodanimation = 0;
 toggle1++;
 toggle2++;
 toggle3++;
-randomheartbeat = getRandomArbitrary(10, 20);
+randomheartbeat = 3;
 if (toggle1 > randomheartbeat)
 toggle1 = 1;
 if (toggle2 > randomheartbeat)
@@ -318,20 +318,20 @@ if (mybully == 3 || mybully == 4 || mybully == 5)
 {
 burn = spark;
 spark1 = spark1 - 16;
-fireplaceArray[burn] = 0;
+fireplaceArray[burn] = 1;
 fireplaceArray[spark1] = betweenx;
 }
 if (mybully < 6 && mybully > 2)
 {
-  fireplaceArray[burn] = 0;
+  fireplaceArray[burn] = 1;
   fireplaceArray[spark1] = betweenx;
 }
 if (mybully == 6 || mybully == 7 || mybully == 8)
 spark1 = spark1 - 32;
-burn = spark1 - 16;
+burn = spark - 16;
 if (mybully < 9 && mybully > 5)
 {
-  fireplaceArray[burn] = 0;
+  fireplaceArray[burn] = 1;
   fireplaceArray[spark1] = betweenx;
 }
 }
@@ -449,8 +449,8 @@ function fireplaceDraw() {
 		for (var y = 0; y < 16; y ++) {
 			var id = fireplaceArray[(y << 4) + x];
 			var id2 = fireplaceArray[(y << 4) + x];
-			var hues = ['0', '21', '20', '19', '0', '41', '43', '45', '51', '56', '0', '0', '0', '0', '0']; 
-			var sats = ['0%', '50%', '50%', '50%', '0%', '100%', '100%', '100%', '100%', '100%', '0%', '0%', '0%', '0%', '0%'];
+			var hues = ['0', '21', '20', '19', '0', '41', '43', '45', '51', '56', '0', '0', '0', '0', '0', '0']; 
+			var sats = ['0%', '50%', '50%', '50%', '0%', '100%', '100%', '100%', '100%', '100%', '0%', '0%', '0%', '0%','0%', '100%'];
 			
       var modhue = "";
       var modsats = "";
