@@ -68,7 +68,7 @@ reqAniFrame = (function() {
 })();
 
 var fireplaceArray = new Array(256);
-var fireplaceColors = ['0%', '5%', '6%', '7%', '0%', '55%', '55%', '55%', '55%', '55%', '0%', '0%', '0%', '0%', '0%', '1%'];
+var fireplaceColors = ['0%', '7%', '6%', '5%', '0%', '55%', '55%', '55%', '55%', '55%', '0%', '0%', '0%', '0%', '0%', '1%'];
 var poligon = ""
 
 //fireplacePosition = (display.width - display.height) / 2;
@@ -129,7 +129,21 @@ var mylayout =0;
 var toggle1 = 1;
 var toggle2 = 2;
 var toggle3 = 3;
+
 var randomheartbeat = 0;
+
+		 var rememberspot1 = 0;
+		 var rememberspot2 = 0;
+		 var rememberspot3 = 0;
+		 var rememberspot4 = 0;
+		 var rememberspot5 = 0;
+		 var numberspots = 0;
+		 var numberspots2 = 0;
+		 var numberspots3 = 0;
+		 var calarr1 = 0;
+		 var calarr2 = 0;
+		 var calarr3 = 0;
+		 var caldyco = 0;
 function fireplaceMove() {
 
   bounce = getRandomArbitrary(0, 0);
@@ -188,6 +202,7 @@ function fireplaceMove() {
 			}
 		}
 	}
+
 woodsy++;
 if (woodsy == 5)
 woodsy = 1;
@@ -211,77 +226,55 @@ woodsy = 1;
 	
 	
 	
+   
 
 	//woodsyorig
   		for (var i = 239; i < 256; i ++) {
-		if (woodsy == 1)
-		{
 		
 		
-		if (toggle3 == 1)
-		{
-		holdwoodsy = 1;
-		}
-		if (toggle3 == 2)
-		{
-	    holdwoodsy = 2;
-		}
-		if (toggle3 == 3)
-		{
-	    holdwoodsy = 3;		
-		}
-		
-		
-		holdwoodsyarr[i] = holdwoodsy;
-		}
-		fireplaceArray[i] = holdwoodsyarr[i];
-	} 
-		for (var i = 225; i < 239; i ++) {
-		if (woodsy == 1)
-		{
-        if (toggle2 == 1)
-		{
-		holdwoodsy = 1;
-		}
-		if (toggle2 == 2)
-		{
-	    holdwoodsy = 2;
-		}
-		if (toggle2 == 3)
-		{
-	    holdwoodsy = 3;		
-		}
-		
-		holdwoodsyarr[i] = holdwoodsy;
-		}
-		fireplaceArray[i] = holdwoodsyarr[i];
-	} 
-	for (var i = 212; i < 221; i ++) {
-		if (woodsy == 1)
-		{
-		if (toggle1 == 1)
-		{
-		holdwoodsy = 1;
-		}
-		if (toggle1 == 2)
-		{
-	    holdwoodsy = 2;
-		}
-		if (toggle1 == 3)
-		{
-	    holdwoodsy = 3;		
-		}
-		
-		holdwoodsyarr2[i] = holdwoodsy;
-		}
-		fireplaceArray[i] = holdwoodsyarr2[i];
-	} 
 	
+		
+		
+		holdwoodsy = Math.round(getRandomArbitrary(1, 3));
+		holdwoodsyarr[calarr1] = holdwoodsy;
+		
+		
+		fireplaceArray[i] = holdwoodsyarr[calarr1];
+	
+		calarr1++;
+	} 
+	    calarr1 = 0;
+		for (var i = 225; i < 239; i ++) {
+	
+	    if (caldyco > 1)
+		{
+		holdwoodsyarr2[calarr2] = holdwoodsyarr[calarr2];
+		fireplaceArray[i] = holdwoodsyarr2[calarr2];
+		}
+		
+		
+		calarr2++;
+	} 
+	    calarr2 = 0;
+	for (var i = 212; i < 221; i ++) {
+	
+		if (caldyco > 2)
+		{
+		holdwoodsyarr3[calarr3] = holdwoodsyarr2[calarr3];
+		
+		fireplaceArray[i] = holdwoodsyarr3[calarr3];
+		}
+			calarr3++;
+	} 
+	calarr3 = 0;
+
+
 if (woodanimation == 3)
 woodanimation = 0;
 toggle1++;
 toggle2++;
 toggle3++;
+caldyco++;
 randomheartbeat = 3;
 if (toggle1 > randomheartbeat)
 toggle1 = 1;
@@ -289,7 +282,8 @@ if (toggle2 > randomheartbeat)
 toggle2 = 1;
 if (toggle2 > randomheartbeat)
 toggle2 = 1;
-
+if (caldyco > 2)
+caldyco = 3;
 var between = Math.round(getRandomArbitrary(6, 8));
 fireplaceArray[239] = 0;
 fireplaceArray[224] = 0;
@@ -298,7 +292,8 @@ fireplaceArray[208] = 0;
 //fireplaceArray[238] = between;
 
 
-
+if (caldyco == 3)
+{
 function sparkgenerator(mybully, spark, burn) {
 var spark1 = spark;
 var betweenx = Math.round(getRandomArbitrary(6, 8));
@@ -316,22 +311,22 @@ if (mybully < 3)
 }
 if (mybully == 3 || mybully == 4 || mybully == 5)
 {
-burn = spark;
+//burn = spark;
 spark1 = spark1 - 16;
-fireplaceArray[burn] = 1;
+//fireplaceArray[burn] = 1;
 fireplaceArray[spark1] = betweenx;
 }
 if (mybully < 6 && mybully > 2)
 {
-  fireplaceArray[burn] = 1;
+ // fireplaceArray[burn] = 1;
   fireplaceArray[spark1] = betweenx;
 }
 if (mybully == 6 || mybully == 7 || mybully == 8)
 spark1 = spark1 - 32;
-burn = spark - 16;
+//burn = spark - 16;
 if (mybully < 9 && mybully > 5)
 {
-  fireplaceArray[burn] = 1;
+//  fireplaceArray[burn] = 1;
   fireplaceArray[spark1] = betweenx;
 }
 }
@@ -439,7 +434,7 @@ if (sparks8 == 9)
 {
   sparks8 = 0;
 }
-
+}
 
 }
 
@@ -449,8 +444,8 @@ function fireplaceDraw() {
 		for (var y = 0; y < 16; y ++) {
 			var id = fireplaceArray[(y << 4) + x];
 			var id2 = fireplaceArray[(y << 4) + x];
-			var hues = ['0', '21', '20', '19', '0', '41', '43', '45', '51', '56', '0', '0', '0', '0', '0', '0']; 
-			var sats = ['0%', '50%', '50%', '50%', '0%', '100%', '100%', '100%', '100%', '100%', '0%', '0%', '0%', '0%','0%', '100%'];
+			var hues = ['0', '21', '20', '15', '0', '41', '43', '45', '51', '56', '0', '0', '0', '0', '0', '0']; 
+			var sats = ['0%', '40%', '40%', '40%', '0%', '100%', '100%', '100%', '100%', '100%', '0%', '0%', '0%', '0%','0%', '100%'];
 			
       var modhue = "";
       var modsats = "";
@@ -606,7 +601,6 @@ function fireplaceDraw() {
 
 			ctx.fillStyle = 'hsl(' + modhue+	','+ modsats +', ' + modlight + ')';
 			ctx.fillRect(fireplacePosition + x * poligon, fireplacePositionv + y * poligon, poligon + 1, poligon + 1);
-
 		}
 	}
 }
