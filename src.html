@@ -38,6 +38,15 @@ var we = 0;
 var he = 0;
 var fireplacePosition = "";
 var fireplacePositionv = "";
+var rememberburn1 =0;
+var rememberburn2 =0;
+var rememberburn3 =0;
+var rememberburn4 =0;
+var rememberburn5 =0;
+var rememberburn6 =0;
+var rememberburn7 =0;
+var rememberburn8 =0;
+
 function getRandomArbitrary(min, max) {
   return Math.random() * (max - min) + min;
 }
@@ -180,7 +189,7 @@ function fireplaceMove() {
 		}
 	}
 woodsy++;
-if (woodsy == 2)
+if (woodsy == 4)
 woodsy = 1;
 	burst = 0;
 	LRM++;
@@ -290,7 +299,7 @@ fireplaceArray[208] = 0;
 
 
 
-function sparkgenerator(mybully, spark) {
+function sparkgenerator(mybully, spark, burn) {
 var spark1 = spark;
 var betweenx = Math.round(getRandomArbitrary(6, 8));
 if (mybully < 9)
@@ -307,17 +316,22 @@ if (mybully < 3)
 }
 if (mybully == 3 || mybully == 4 || mybully == 5)
 {
+burn = spark;
 spark1 = spark1 - 16;
+fireplaceArray[burn] = 0;
 fireplaceArray[spark1] = betweenx;
 }
 if (mybully < 6 && mybully > 2)
 {
+  fireplaceArray[burn] = 0;
   fireplaceArray[spark1] = betweenx;
 }
 if (mybully == 6 || mybully == 7 || mybully == 8)
 spark1 = spark1 - 32;
+burn = spark1 - 16;
 if (mybully < 9 && mybully > 5)
 {
+  fireplaceArray[burn] = 0;
   fireplaceArray[spark1] = betweenx;
 }
 }
@@ -326,9 +340,10 @@ if (mybully < 9 && mybully > 5)
 if (sparks1 == 0)
 {
 var sparks1rand = Math.round(getRandomArbitrary(240, 256));
+rememberburn1 = sparks1rand;
 sparky1 = sparks1rand;
 }
-sparkgenerator(sparks1, sparky1);
+sparkgenerator(sparks1, sparky1, rememberburn1);
 sparks1++;
 if (sparks1 == 9)
 {
@@ -338,33 +353,36 @@ if (sparks1 == 9)
 if (sparks2 == 0)
 {
 var sparks2rand = Math.round(getRandomArbitrary(240, 256));
+rememberburn2 = sparks2rand;
 sparky2 = sparks2rand;
 }
-sparkgenerator(sparks2, sparky2);
+sparkgenerator(sparks2, sparky2, rememberburn2);
 sparks2++;
 if (sparks2 == 9)
 {
   sparks2 = 0;
 }
 
+
 if (sparks3 == 0)
 {
 var sparks3rand = Math.round(getRandomArbitrary(240, 256));
-sparky3= sparks3rand;
+rememberburn3 = sparks3rand;
+sparky3 = sparks3rand;
 }
-sparkgenerator(sparks3, sparky3);
+sparkgenerator(sparks3, sparky3, rememberburn3);
 sparks3++;
 if (sparks3 == 9)
 {
   sparks3 = 0;
 }
-
 if (sparks4 == 0)
 {
 var sparks4rand = Math.round(getRandomArbitrary(240, 256));
+rememberburn4 = sparks4rand;
 sparky4 = sparks4rand;
 }
-sparkgenerator(sparks4, sparky4);
+sparkgenerator(sparks4, sparky4, rememberburn4);
 sparks4++;
 if (sparks4 == 9)
 {
@@ -374,48 +392,54 @@ if (sparks4 == 9)
 if (sparks5 == 0)
 {
 var sparks5rand = Math.round(getRandomArbitrary(240, 256));
+rememberburn5 = sparks5rand;
 sparky5 = sparks5rand;
 }
-sparkgenerator(sparks5, sparky5);
+sparkgenerator(sparks5, sparky5, rememberburn5);
 sparks5++;
 if (sparks5 == 9)
 {
   sparks5 = 0;
 }
+
 if (sparks6 == 0)
 {
 var sparks6rand = Math.round(getRandomArbitrary(240, 256));
+rememberburn6 = sparks6rand;
 sparky6 = sparks6rand;
 }
-sparkgenerator(sparks6, sparky6);
+sparkgenerator(sparks6, sparky6, rememberburn6);
 sparks6++;
 if (sparks6 == 9)
 {
   sparks6 = 0;
 }
-
 if (sparks7 == 0)
 {
 var sparks7rand = Math.round(getRandomArbitrary(240, 256));
+rememberburn7 = sparks7rand;
 sparky7 = sparks7rand;
 }
-sparkgenerator(sparks7, sparky7);
+sparkgenerator(sparks7, sparky7, rememberburn7);
 sparks7++;
 if (sparks7 == 9)
 {
   sparks7 = 0;
 }
+
 if (sparks8 == 0)
 {
 var sparks8rand = Math.round(getRandomArbitrary(240, 256));
+rememberburn8 = sparks8rand;
 sparky8 = sparks8rand;
 }
-sparkgenerator(sparks8, sparky8);
+sparkgenerator(sparks8, sparky8, rememberburn8);
 sparks8++;
 if (sparks8 == 9)
 {
   sparks8 = 0;
 }
+
 
 }
 
