@@ -68,7 +68,7 @@ reqAniFrame = (function() {
 })();
 
 var fireplaceArray = new Array(256);
-var fireplaceColors = ['0%', '7%', '6%', '5%', '0%', '55%', '55%', '55%', '55%', '55%', '0%', '0%', '0%', '0%', '0%', '1%'];
+var fireplaceColors = ['0%', '7%', '6%', '5%', '56%', '56%', '56%', '56%', '56%', '56%', '56%', '0%', '0%', '0%', '0%', '1%'];
 var poligon = ""
 
 //fireplacePosition = (display.width - display.height) / 2;
@@ -117,7 +117,7 @@ fireplaceArrayInit();
 var swayx = 0;
 var swayy = 0;
 var retro =0;
-var burst = 1;
+var burst = 0;
 var shine = 0;
 var gotcha = 0;
 var edge = 0;
@@ -144,60 +144,112 @@ var randomheartbeat = 0;
 		 var calarr2 = 0;
 		 var calarr3 = 0;
 		 var caldyco = 0;
+		 var ted = 1;
+		 var tedmodulus = 0;
 function fireplaceMove() {
 
   bounce = getRandomArbitrary(0, 0);
   bouncex = getRandomArbitrary(-10, -10);
   retro = getRandomArbitrary(0.7, 0.7);
-	for (var x = 0; x < 16; x++) {
+	for (var x = (1 + ted); x < (15 - ted); x++) {
 	  
 		for (var y = (0); y < (16); y++) {
 		  
 			var id = fireplaceArray[(y << 4 + gotcha) + x + swayx];
 			if (id == 1 || id == 2 || id == 3)  {
 				var r = Math.random();
+				var rz = Math.random();
+				var rz2 = Math.random();
 				var upID = fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx];
 				if (upID != 1 && upID != 2 && upID != 3) {
 					var r = Math.random();
+					var rz = Math.random();
+					var rz2 = Math.random();
 					if (r > bouncex) {fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 4) + 5 + shine}
 					if (r > bouncex) {fireplaceArray[(y + swayy << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 2 + 1 + shine)}
-					if (r < bouncex) {fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 0}
+					if (r < bouncex) {fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 0;}
+					if (rz > bouncex) {fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 4) + 5 + shine}
+					if (rz > bouncex) {fireplaceArray[(y + swayy << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 2 + 1 + shine)}
+					if (rz < bouncex) {fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 0;}
+					if (rz2 > bouncex) {fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 4) + 5 + shine}
+					if (rz2 > bouncex) {fireplaceArray[(y + swayy << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 2 + 1 + shine)}
+					if (rz2 < bouncex) {fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 0;}
+					
 				}
 			}
 
       if (burst == 0)
       {
-			if (id > 4 && id < 16) {
+			if (id > 4 && id < 7) {
 				var r = Math.random();
-				var retro2 = 0.9;
+				var rz = Math.random();
+				var rz2 = Math.random();
+				var retro2 = 2;
 				if (r < retro2) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 4 + 1) + 4 + shine;
-			  retro = 0.7;
+			  retro = 0.8;
 		    if (r > retro) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 4 + edge;
+		    
+				if (rz < retro2) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 4 + 1) + 4 + shine;
+			  retro = 0.8;
+		    if (rz > retro) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 4 + edge;
+
+				if (rz2 < retro2) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 4 + 1) + 4 + shine;
+			  retro = 0.8;
+		    if (rz2 > retro) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 4 + edge;
 				//if (r > 0.5 && r < 0.999) fireplaceArray[(y - 1 << 4) + x] = 0;	
 				fireplaceArray[(y + swayy << 4 + gotcha) + x + swayx] = 0;
 
 			}
-      }		
-      if (burst == 1)
-      {
-      if (id > 4 && id < 16) {
+			if (id > 6 && id < 9) {
 				var r = Math.random();
-				
-				if (r < 256) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 4 + 1) + 4 + shine;
-			  retro = 0.6;
-		    if (r > retro) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 4+ edge;
+				var rz = Math.random();
+				var rz2 = Math.random();
+				var retro2 = 2;
+				if (r < retro2) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 4 + 1) + 4 + shine;
+			  retro = 0.7;
+		    if (r > retro) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 4 + edge;
+		    
+				if (rz < retro2) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 4 + 1) + 4 + shine;
+			  retro = 0.7;
+		    if (rz > retro) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 4 + edge;
+
+				if (rz2 < retro2) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 4 + 1) + 4 + shine;
+			  retro = 0.7;
+		    if (rz2 > retro) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 4 + edge;
 				//if (r > 0.5 && r < 0.999) fireplaceArray[(y - 1 << 4) + x] = 0;	
 				fireplaceArray[(y + swayy << 4 + gotcha) + x + swayx] = 0;
 
-			}        
+			}			
+			if (id > 8 && id < 16) {
+				var r = Math.random();
+				var rz = Math.random();
+				var rz2 = Math.random();
+				var retro2 = 2;
+				if (r < retro2) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 4 + 1) + 4 + shine;
+			  retro = -1;
+		    if (r > retro) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 4 + edge;
+		    
+				if (rz < retro2) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 4 + 1) + 4 + shine;
+			  retro = -1;
+		    if (rz > retro) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 4 + edge;
+
+				if (rz2 < retro2) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 4 + 1) + 4 + shine;
+			  retro = -1;
+		    if (rz2 > retro) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 4 + edge;
+				//if (r > 0.5 && r < 0.999) fireplaceArray[(y - 1 << 4) + x] = 0;	
+				fireplaceArray[(y + swayy << 4 + gotcha) + x + swayx] = 0;
+
+			}						
 			
-      }
+			
+      }		
+ 
     
 			
 		
 			
 			if (id == 4) {
-				fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 4 + edge;
+				fireplaceArray[(y + swayy - 0 << 4 + gotcha) + x + swayx] = 4 + edge;
 				fireplaceArray[(y + swayy << 4 + gotcha) + x + swayx] = 0;
 			}
 		}
@@ -207,6 +259,15 @@ woodsy++;
 if (woodsy == 5)
 woodsy = 1;
 	burst = 0;
+
+	if (tedmodulus > 0)
+	ted = 0;
+	if (tedmodulus > 31)
+	tedmodulus = 0;
+	tedmodulus++;
+	if (tedmodulus == 0)
+	ted = 7;
+
 	LRM++;
 	if (LRM%2 == 0)
 	{
@@ -285,10 +346,13 @@ toggle2 = 1;
 if (caldyco > 2)
 caldyco = 3;
 var between = Math.round(getRandomArbitrary(6, 8));
+
+fireplaceArray[209] = 0;
+fireplaceArray[222] = 0;
 fireplaceArray[239] = 0;
 fireplaceArray[224] = 0;
 fireplaceArray[223] = 0;
-fireplaceArray[208] = 0;
+fireplaceArray[208] = 0; 
 //fireplaceArray[238] = between;
 
 
@@ -437,15 +501,21 @@ if (sparks8 == 9)
 }
 
 }
-
-
+var breaky = 0;
+var breakym = 0;
+var breakyadjust = 60;
+var breakr = 0;
+var breakl = 0;
 function fireplaceDraw() {
+ breakr = 0;
 	for (var x = 0; x < 16; x ++) {
+	  breaky = 0;
+	  breakl = 0;
 		for (var y = 0; y < 16; y ++) {
 			var id = fireplaceArray[(y << 4) + x];
 			var id2 = fireplaceArray[(y << 4) + x];
-			var hues = ['0', '21', '20', '15', '0', '41', '43', '45', '51', '56', '0', '0', '0', '0', '0', '0']; 
-			var sats = ['0%', '40%', '40%', '40%', '0%', '100%', '100%', '100%', '100%', '100%', '0%', '0%', '0%', '0%','0%', '100%'];
+			var hues = ['0', '21', '20', '15', '44', '57', '53', '50', '47', '44', '57', '0', '0', '0', '0', '0']; 
+			var sats = ['0%', '40%', '40%', '40%', '100%', '100%', '100%', '100%', '100%', '100%', '0%', '0%', '0%', '0%','0%', '100%'];
 			
       var modhue = "";
       var modsats = "";
@@ -454,154 +524,63 @@ function fireplaceDraw() {
       var originalsats = sats[id];
       var originallightness = fireplaceColors[id];
 		
+  
+ 
+  
+      if (y == breaky)
+      { 
+      if (breaky < 6)
+      {
 
+      modhue = originalhue - 30;
+      modsats = originalsats;
+      var modl = originallightness.replace("%", "");
+      var modl2 = parseInt(modl) - (100 - breaky * 20);
+		  modlight = modl2.toString() + "%";
+      }
+      if (breaky > 5)
+      {
+			modhue = originalhue - (72 - (breaky * 6));
 
-	                if (y == 0) { 
-			modhue = originalhue - 30;
 			modsats = originalsats;
-                        var modl = originallightness.replace("%", "");
-                        var modl2 = parseInt(modl) - 50;
-			modlight = modl2.toString() + "%";
-	   		}	
-	                if (y == 1) { 
-			modhue = originalhue - 30;
-			modsats = originalsats;
-                        var modl = originallightness.replace("%", "");
-                        var modl2 = parseInt(modl) - 45;
-			modlight = modl2.toString() + "%";
-	   		}	
-	                if (y == 2) { 
-			modhue = originalhue - 30;
-			modsats = originalsats;
-                        var modl = originallightness.replace("%", "");
-                        var modl2 = parseInt(modl) - 40;
-			modlight = modl2.toString() + "%";
-	   		}	
-	                if (y == 3) { 
-			modhue = originalhue - 30;
-			modsats = originalsats;
-                        var modl = originallightness.replace("%", "");
-                        var modl2 = parseInt(modl) - 35;
-			modlight = modl2.toString() + "%";
-	   		}		               
-	                if (y == 4) { 
-			modhue = originalhue - 30;
-			modsats = originalsats;
-                        var modl = originallightness.replace("%", "");
-                        var modl2 = parseInt(modl) - 30;
-			modlight = modl2.toString() + "%";
-	   		}	0
-	                if (y == 5) { 
-			modhue = originalhue - 30;
-			modsats = originalsats;
-                        var modl = originallightness.replace("%", "");
-                        var modl2 = parseInt(modl) - 25;
-			modlight = modl2.toString() + "%";
-	   		}	
-			if (y == 6) { 
-			modhue = originalhue - 30;
-			modsats = originalsats;
-                        var modl = originallightness.replace("%", "");
-                        var modl2 = parseInt(modl) - 20;
-			modlight = modl2.toString() + "%";
-	   		}	
-	                if (y == 7) { 
-			modhue = originalhue - 30;
-			modsats = originalsats;
-                        var modl = originallightness.replace("%", "");
-                        var modl2 = parseInt(modl) - 15;
-			modlight = modl2.toString() + "%";
-	   		}		
-	                if (y == 8) { 
-			modhue = originalhue - 25;
-			modsats = originalsats;
-                        var modl = originallightness.replace("%", "");
-                        var modl2 = parseInt(modl) - 10;
-			modlight = modl2.toString() + "%";
-	   		}
-	                if (y == 9) { 
-			modhue = originalhue - 20;
-			modsats = originalsats;
-                        var modl = originallightness.replace("%", "");
-                        var modl2 = parseInt(modl) - 5;
-			modlight = modl2.toString() + "%";
-	   		}
-	                if (y == 10) { 
-			modhue = originalhue - 15;
-			modsats = originalsats;
-			modlight = originallightness;
-	   		}
-	                if (y == 11) { 
-			modhue = originalhue - 10;
-			modsats = originalsats;
-			modlight = originallightness;
-	   		}
-	                if (y == 12) { 
-			modhue = originalhue - 5;
-			modsats = originalsats;
-			modlight = originallightness;
-	   		}
-	                if (y == 13) { 
-			modhue = originalhue;
-			modsats = originalsats;
-			modlight = originallightness;
-	   		}
+      var modl = originallightness.replace("%", "");
+      var modl2 = parseInt(modl) + 0;
+		  modlight = modl2.toString() + "%";
+      }
+	   	}	
+	   	
+      if (y > 9 && x < 8)
+      { 
+      
+			modhue = originalhue - (32 - Math.round(breakr * 2));
 
+			modsats = originalsats;
+      var modl = originallightness.replace("%", "");
+      var modl2 = parseInt(modl) - 0;
+		  modlight = modl2.toString() + "%";
+      
+	   	}	
+	   	
+      if (y > 9 && x > 7)
+      { 
+    
+			modhue = originalhue - (Math.round(breakr * 2));
 
-
-
-
-	    if (x < 16 && x > -1 && y > 11) { 
-			modhue = originalhue - 30;
 			modsats = originalsats;
-                        var modl = originallightness.replace("%", "");
-                        var modl2 = parseInt(modl) - 5;
-			modlight = modl2.toString() + "%";
-			}
-			if (x < 15 && x > 0 && y > 11) { 
-			modhue = originalhue - 25;
-			modsats = originalsats;
-                        var modl = originallightness.replace("%", "");
-                        var modl2 = parseInt(modl) - 4;
-			modlight = modl2.toString() + "%";
-			}
-			if (x < 14 && x > 1 && y > 11) { 
-			modhue = originalhue - 20;
-			modsats = originalsats;
-                        var modl = originallightness.replace("%", "");
-                        var modl2 = parseInt(modl) - 3;
-			modlight = modl2.toString() + "%";
-			}
-			if (x < 13 && x > 2 && y > 11) { 
-			modhue = originalhue - 15;
-			modsats = originalsats;
-                        var modl = originallightness.replace("%", "");
-                        var modl2 = parseInt(modl) - 2;
-			modlight = modl2.toString() + "%";
-			}	
-			if (x < 12 && x > 3 && y > 11) { 
-			modhue = originalhue - 10;
-			modsats = originalsats;
-                        var modl = originallightness.replace("%", "");
-                        var modl2 = parseInt(modl) - 1;
-			modlight = modl2.toString() + "%";
-			}	
-			if (x < 11 && x > 4 && y > 11) { 
-			modhue = originalhue - 5;
-			modsats = originalsats;
-			modlight = originallightness;
-			}			
-			if (x < 9 && x > 5 && y > 11) { 
-			modhue = originalhue;
-			modsats = originalsats;
-			modlight = originallightness;
-	    }
-
+      var modl = originallightness.replace("%", "");
+      var modl2 = parseInt(modl) + 0;
+		  modlight = modl2.toString() + "%";
+      
+	   	}	
+	     
 
 
 			ctx.fillStyle = 'hsl(' + modhue+	','+ modsats +', ' + modlight + ')';
 			ctx.fillRect(fireplacePosition + x * poligon, fireplacePositionv + y * poligon, poligon + 1, poligon + 1);
+			breaky++;
+     
 		}
+	breakr++;
 	}
 }
 /*
