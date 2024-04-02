@@ -34,6 +34,7 @@ html, body {
 var display = "";
 var hashorizon = 0;
 var bounce = 0;
+var firebounce = 0;
 var we = 0;
 var he = 0;
 var fireplacePosition = "";
@@ -68,7 +69,7 @@ reqAniFrame = (function() {
 })();
 
 var fireplaceArray = new Array(256);
-var fireplaceColors = ['0%', '2%', '1%', '1%', '0%', '50%', '50%', '50%', '50%', '50%', '50%', '0%', '0%', '0%', '0%', '100%'];
+var fireplaceColors = ['0%', '0%', '0%', '0%', '0%', '50%', '50%', '50%', '50%', '50%', '50%', '0%', '0%', '0%', '0%', '100%'];
 var poligon = ""
 
 //fireplacePosition = (display.width - display.height) / 2;
@@ -147,240 +148,289 @@ var randomheartbeat = 0;
 		 var ted = 1;
 		 var tedmodulus = 0;
 		 var wavvy = 0;
+		 
+		 
+		 
+		 
+		 
+		 
+
 function fireplaceMove() {
 
   bounce = getRandomArbitrary(0, 0);
-  bouncex = getRandomArbitrary(-10, -10);
+  bouncex = 0.79;
   retro = getRandomArbitrary(0.7, 0.7);
 	for (var x = (1 + ted); x < (15 - ted); x++) {
 		for (var y = (0 + wavvy); y < (16); y++) {
 			var id = fireplaceArray[(y << 4 + gotcha) + x + swayx];
 			if (id == 1 || id == 2 || id == 3)  {
 				var r = Math.random();
-				var rz = Math.random();
-				var rz2 = Math.random();
+			//	var rz = Math.random();
+		//	var rz2 = Math.random();
 				var upID = fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx];
 				if (upID != 1 && upID != 2 && upID != 3) {
-					var r = Math.random();
-					var rz = Math.random();
-					var rz2 = Math.random();
-					if (r > bouncex) {fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 4) + 5 + shine}
-					if (r > bouncex) {fireplaceArray[(y + swayy << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 2 + 1 + shine)}
-					if (r < bouncex) {fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 0;}
-					if (rz > bouncex) {fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 4) + 5 + shine}
-					if (rz > bouncex) {fireplaceArray[(y + swayy << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 2 + 1 + shine)}
-					if (rz < bouncex) {fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 0;}
-					if (rz2 > bouncex) {fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 4) + 5 + shine}
-					if (rz2 > bouncex) {fireplaceArray[(y + swayy << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 2 + 1 + shine)}
-					if (rz2 < bouncex) {fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 0;}
-					
+				//	var r = Math.random();
+				//	var rz = Math.random();
+				//	var rz2 = Math.random();
+				//	var r = Math.random();
+					if (r > 0.6) {fireplaceArray[(y - 1 << 4) + x] = Math.round(Math.random() * 3) + 5}
+					if (r > 0.6) {fireplaceArray[(y << 4) + x] = Math.round(Math.random() * 2 + 1)}			//	if (r < 0.3) {fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 0;}
+			
 				}
 			}
-
-      if (x != 2 && x != 13 && x != 3 && x != 12)
-      {
-			if (id > 4 && id < 7) {
-				var r = Math.random();
-				var rz = Math.random();
-				var rz2 = Math.random();
-				var retro2 = 2;
-				if (r < retro2) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 4 + 1) + 4 + shine;
-			  retro = 0.8;
-		    if (r > retro) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 4 + edge;
-		    
-				if (rz < retro2) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 4 + 1) + 4 + shine;
-			  retro = 0.8;
-		    if (rz > retro) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 4 + edge;
-
-				if (rz2 < retro2) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 4 + 1) + 4 + shine;
-			  retro = 0.8;
-		    if (rz2 > retro) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 4 + edge;
-				//if (r > 0.5 && r < 0.999) fireplaceArray[(y - 1 << 4) + x] = 0;	
-				fireplaceArray[(y + swayy << 4 + gotcha) + x + swayx] = 0;
-
-			}
-			if (id > 6 && id < 9) {
-				var r = Math.random();
-				var rz = Math.random();
-				var rz2 = Math.random();
-				var retro2 = 2;
-				if (r < retro2) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 4 + 1) + 4 + shine;
-			  retro = 0.9;
-		    if (r > retro) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 4 + edge;
-		    
-				if (rz < retro2) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 4 + 1) + 4 + shine;
-			  retro = 0.9;
-		    if (rz > retro) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 4 + edge;
-
-				if (rz2 < retro2) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 4 + 1) + 4 + shine;
-			  retro = 0.9;
-		    if (rz2 > retro) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 4 + edge;
-				//if (r > 0.5 && r < 0.999) fireplaceArray[(y - 1 << 4) + x] = 0;	
-				fireplaceArray[(y + swayy << 4 + gotcha) + x + swayx] = 0;
-
-			}			
-			if (id > 8 && id < 16) {
-				var r = Math.random();
-				var rz = Math.random();
-				var rz2 = Math.random();
-				var retro2 = 2;
-				if (r < retro2) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 4 + 1) + 4 + shine;
-			  retro = -1;
-		    if (r > retro) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 4 + edge;
-		    
-				if (rz < retro2) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 4 + 1) + 4 + shine;
-			  retro = -1;
-		    if (rz > retro) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 4 + edge;
-
-				if (rz2 < retro2) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 4 + 1) + 4 + shine;
-			  retro = -1;
-		    if (rz2 > retro) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 4 + edge;
-				//if (r > 0.5 && r < 0.999) fireplaceArray[(y - 1 << 4) + x] = 0;	
-				fireplaceArray[(y + swayy << 4 + gotcha) + x + swayx] = 0;
-
-			}						
 			
-			
+	
+			if (id > 4 && id < 16) {
+			  var r = getRandomArbitrary(0,0.2);
+			  
+			//	if (r > 0.3) fireplaceArray[(y - 1 << 4) + x] = 4;
+				if (r < 0.1) fireplaceArray[(y - 1 << 4) + x] = Math.round(Math.random() * 2 + 1) + 4;
+				//if (r > 0.5 && r < 0.999) fireplaceArray[(y - 1 << 4) + x] = 0;	
+				fireplaceArray[(y << 4) + x] = 0;
+				var r = getRandomArbitrary(0.25,0.4);
+			  
+			//	if (r > 0.3) fireplaceArray[(y - 1 << 4) + x] = 4;
+				if (r < 0.3) fireplaceArray[(y - 1 << 4) + x] = Math.round(Math.random() * 2 + 1) + 4;
+				//if (r > 0.5 && r < 0.999) fireplaceArray[(y - 1 << 4) + x] = 0;	
+				fireplaceArray[(y << 4) + x] = 0;
+				
+				
       }		// end of X
- 
+      
+      
+/*
+      
+		  if (x == 0 || x == 15)
+		  {
+			if (id > 4 && id < 16) {
+				var r = Math.random();
+				if (r > 0.4) fireplaceArray[(y - 1 << 4) + x] = 4;
+				if (r < 0.4) fireplaceArray[(y - 1 << 4) + x] = Math.round(Math.random() * 2 + 1) + 4;
+				//if (r > 0.5 && r < 0.999) fireplaceArray[(y - 1 << 4) + x] = 0;	
+				fireplaceArray[(y << 4) + x] = 0;
+			}
+      }		// end of X
+      
+      if (x == 1 || x == 14)
+		  {
+			if (id > 4 && id < 16) {
+				var r = Math.random();
+				if (r > 0.4) fireplaceArray[(y - 1 << 4) + x] = 4;
+				if (r < 0.4) fireplaceArray[(y - 1 << 4) + x] = Math.round(Math.random() * 2 + 1) + 4;
+				//if (r > 0.5 && r < 0.999) fireplaceArray[(y - 1 << 4) + x] = 0;	
+				fireplaceArray[(y << 4) + x] = 0;
+			}
+      }		// end of X
+      
       if (x == 2 || x == 13)
-      {
-			if (id > 4 && id < 7) {
+		  {
+			if (id > 4 && id < 16) {
 				var r = Math.random();
-				var rz = Math.random();
-				var rz2 = Math.random();
-				var retro2 = 2;
-				if (r < retro2) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 4 + 1) + 4 + shine;
-			  retro = 0;
-		    if (r > retro) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 4 + edge;
-		    
-				if (rz < retro2) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 4 + 1) + 4 + shine;
-			  retro = 0;
-		    if (rz > retro) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 4 + edge;
-
-				if (rz2 < retro2) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 4 + 1) + 4 + shine;
-			  retro = 0;
-		    if (rz2 > retro) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 4 + edge;
+				if (r > 0.5) fireplaceArray[(y - 1 << 4) + x] = 4;
+				if (r < 0.5) fireplaceArray[(y - 1 << 4) + x] = Math.round(Math.random() * 2 + 1) + 4;
 				//if (r > 0.5 && r < 0.999) fireplaceArray[(y - 1 << 4) + x] = 0;	
-				fireplaceArray[(y + swayy << 4 + gotcha) + x + swayx] = 0;
-
+				fireplaceArray[(y << 4) + x] = 0;
 			}
-			if (id > 6 && id < 9) {
-				var r = Math.random();
-				var rz = Math.random();
-				var rz2 = Math.random();
-				var retro2 = 2;
-				if (r < retro2) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 4 + 1) + 4 + shine;
-			  retro = 0.6;
-		    if (r > retro) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 4 + edge;
-		    
-				if (rz < retro2) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 4 + 1) + 4 + shine;
-			  retro = 0.6;
-		    if (rz > retro) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 4 + edge;
-
-				if (rz2 < retro2) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 4 + 1) + 4 + shine;
-			  retro = 0.6;
-		    if (rz2 > retro) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 4 + edge;
-				//if (r > 0.5 && r < 0.999) fireplaceArray[(y - 1 << 4) + x] = 0;	
-				fireplaceArray[(y + swayy << 4 + gotcha) + x + swayx] = 0;
-
-			}			
-			if (id > 8 && id < 16) {
-				var r = Math.random();
-				var rz = Math.random();
-				var rz2 = Math.random();
-				var retro2 = 2;
-				if (r < retro2) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 4 + 1) + 4 + shine;
-			  retro = 0.6;
-		    if (r > retro) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 4 + edge;
-		    
-				if (rz < retro2) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 4 + 1) + 4 + shine;
-			  retro = 0.6;
-		    if (rz > retro) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 4 + edge;
-
-				if (rz2 < retro2) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 4 + 1) + 4 + shine;
-			  retro = 0.6;
-		    if (rz2 > retro) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 4 + edge;
-				//if (r > 0.5 && r < 0.999) fireplaceArray[(y - 1 << 4) + x] = 0;	
-				fireplaceArray[(y + swayy << 4 + gotcha) + x + swayx] = 0;
-
-			}						
-			
-			
       }		// end of X
-			
-		 if (x == 3 || x == 12)
-      {
-			if (id > 4 && id < 7) {
+      
+      if (x == 3 || x == 12)
+		  {
+			if (id > 4 && id < 16) {
 				var r = Math.random();
-				var rz = Math.random();
-				var rz2 = Math.random();
-				var retro2 = 2;
-				if (r < retro2) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 4 + 1) + 4 + shine;
-			  retro = 0.5;
-		    if (r > retro) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 4 + edge;
-		    
-				if (rz < retro2) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 4 + 1) + 4 + shine;
-			  retro = 0.5;
-		    if (rz > retro) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 4 + edge;
-
-				if (rz2 < retro2) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 4 + 1) + 4 + shine;
-			  retro = 0.5;
-		    if (rz2 > retro) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 4 + edge;
+				if (r > 0.6) fireplaceArray[(y - 1 << 4) + x] = 4;
+				if (r < 0.6) fireplaceArray[(y - 1 << 4) + x] = Math.round(Math.random() * 2 + 1) + 4;
 				//if (r > 0.5 && r < 0.999) fireplaceArray[(y - 1 << 4) + x] = 0;	
-				fireplaceArray[(y + swayy << 4 + gotcha) + x + swayx] = 0;
-
+				fireplaceArray[(y << 4) + x] = 0;
 			}
-			if (id > 6 && id < 9) {
-				var r = Math.random();
-				var rz = Math.random();
-				var rz2 = Math.random();
-				var retro2 = 2;
-				if (r < retro2) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 4 + 1) + 4 + shine;
-			  retro = 0.5;
-		    if (r > retro) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 4 + edge;
-		    
-				if (rz < retro2) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 4 + 1) + 4 + shine;
-			  retro = 0.5;
-		    if (rz > retro) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 4 + edge;
-
-				if (rz2 < retro2) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 4 + 1) + 4 + shine;
-			  retro = 0.5;
-		    if (rz2 > retro) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 4 + edge;
-				//if (r > 0.5 && r < 0.999) fireplaceArray[(y - 1 << 4) + x] = 0;	
-				fireplaceArray[(y + swayy << 4 + gotcha) + x + swayx] = 0;
-
-			}			
-			if (id > 8 && id < 16) {
-				var r = Math.random();
-				var rz = Math.random();
-				var rz2 = Math.random();
-				var retro2 = 2;
-				if (r < retro2) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 4 + 1) + 4 + shine;
-			  retro = 1;
-		    if (r > retro) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 4 + edge;
-		    
-				if (rz < retro2) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 4 + 1) + 4 + shine;
-			  retro = 1;
-		    if (rz > retro) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 4 + edge;
-
-				if (rz2 < retro2) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = Math.round(Math.random() * 4 + 1) + 4 + shine;
-			  retro = 1;
-		    if (rz2 > retro) fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 4 + edge;
-				//if (r > 0.5 && r < 0.999) fireplaceArray[(y - 1 << 4) + x] = 0;	
-				fireplaceArray[(y + swayy << 4 + gotcha) + x + swayx] = 0;
-
-			}						
-			
-			
       }		// end of X
+      
+      if (x == 4 || x == 11)
+		  {
+			if (id > 4 && id < 16) {
+				var r = Math.random();
+				if (r > 0.8) fireplaceArray[(y - 1 << 4) + x] = 4;
+				if (r < 0.8) fireplaceArray[(y - 1 << 4) + x] = Math.round(Math.random() * 2 + 1) + 4;
+				//if (r > 0.5 && r < 0.999) fireplaceArray[(y - 1 << 4) + x] = 0;	
+				fireplaceArray[(y << 4) + x] = 0;
+			}
+      }		// end of X
+      
+      if (x == 5 || x == 10)
+		  {
+			if (id > 4 && id < 16) {
+				var r = Math.random();
+				if (r > 0.7) fireplaceArray[(y - 1 << 4) + x] = 4;
+				if (r < 0.7) fireplaceArray[(y - 1 << 4) + x] = Math.round(Math.random() * 2 + 1) + 4;
+				//if (r > 0.5 && r < 0.999) fireplaceArray[(y - 1 << 4) + x] = 0;	
+				fireplaceArray[(y << 4) + x] = 0;
+			}
+      }		// end of X
+      
+      if (x == 6 || x == 9)
+		  {
+			if (id > 4 && id < 16) {
+				var r = Math.random();
+				if (r > 0.8) fireplaceArray[(y - 1 << 4) + x] = 4;
+				if (r < 0.8) fireplaceArray[(y - 1 << 4) + x] = Math.round(Math.random() * 2 + 1) + 4;
+				//if (r > 0.5 && r < 0.999) fireplaceArray[(y - 1 << 4) + x] = 0;	
+				fireplaceArray[(y << 4) + x] = 0;
+			}
+      }		// end of X
+      
+      if (x == 7 || x == 8)
+		  {
+			if (id > 4 && id < 16) {
+				var r = Math.random();
+				if (r > 0.7) fireplaceArray[(y - 1 << 4) + x] = 4;
+				if (r < 0.7) fireplaceArray[(y - 1 << 4) + x] = Math.round(Math.random() * 2 + 1) + 4;
+				//if (r > 0.5 && r < 0.999) fireplaceArray[(y - 1 << 4) + x] = 0;	
+				fireplaceArray[(y << 4) + x] = 0;
+			}
+      }		// end of X*/
 			
-			if (id == 4) {
-				fireplaceArray[(y + swayy - 0 << 4 + gotcha) + x + swayx] = 4 + edge;
+			if (id == 0) {
+			//	fireplaceArray[(y + swayy - 0 << 4 + gotcha) + x + swayx] = 4 + edge;
 				fireplaceArray[(y + swayy << 4 + gotcha) + x + swayx] = 0;
 			}
+			
+			
+	var between = Math.round(getRandomArbitrary(7, 9));
+   firebounce++;
+   if (x > 3 && x < 13)
+	{
+for (var i = 242; i < 254; i ++) {
+	between = Math.round(getRandomArbitrary(4, 9));
+		holdwoodsy = between;
+		holdwoodsyarr[calarr1] = holdwoodsy;
+		fireplaceArray[i] = holdwoodsyarr[calarr1];
+		calarr1++;
+	}
+	for (var i = 226; i < 238; i ++) {
+	between = Math.round(getRandomArbitrary(4, 9));
+		holdwoodsy = between;
+		holdwoodsyarr[calarr1] = holdwoodsy;
+		fireplaceArray[i] = holdwoodsyarr[calarr1];
+		calarr1++;
+	} 
+		for (var i = 210; i < 224; i ++) {
+	between = Math.round(getRandomArbitrary(4, 9));
+		holdwoodsy = between;
+		holdwoodsyarr[calarr1] = holdwoodsy;
+		fireplaceArray[i] = holdwoodsyarr[calarr1];
+		calarr1++;
+	} 
+	if (firebounce%2 == 0)
+	for (var i = 195; i < 205; i ++) {
+	between = Math.round(getRandomArbitrary(4, 9));
+		holdwoodsy = between;
+		holdwoodsyarr[calarr1] = holdwoodsy;
+		fireplaceArray[i] = holdwoodsyarr[calarr1];
+		calarr1++;
+	}
+	
+	if (firebounce%2 == 0)
+	for (var i = 179; i < 189; i ++) {
+	between = Math.round(getRandomArbitrary(4, 9));
+		holdwoodsy = between;
+		holdwoodsyarr[calarr1] = holdwoodsy;
+		fireplaceArray[i] = holdwoodsyarr[calarr1];
+		calarr1++;
+	} 
+	//woodsyorig
+}
+
+  if (x < 4 || x > 12)
+	{
+for (var i = 242; i < 244; i ++) {
+	between = Math.round(getRandomArbitrary(0, 9));
+		holdwoodsy = between;
+		holdwoodsyarr[calarr1] = holdwoodsy;
+		fireplaceArray[i] = holdwoodsyarr[calarr1];
+		calarr1++;
+	}
+	for (var i = 226; i < 228; i ++) {
+	between = Math.round(getRandomArbitrary(0, 9));
+		holdwoodsy = between;
+		holdwoodsyarr[calarr1] = holdwoodsy;
+		fireplaceArray[i] = holdwoodsyarr[calarr1];
+		calarr1++;
+	} 
+		for (var i = 210; i < 212; i ++) {
+	between = Math.round(getRandomArbitrary(0, 9));
+		holdwoodsy = between;
+		holdwoodsyarr[calarr1] = holdwoodsy;
+		fireplaceArray[i] = holdwoodsyarr[calarr1];
+		calarr1++;
+	} 
+	if (firebounce%2 == 0)
+	for (var i = 194; i < 196; i ++) {
+	between = Math.round(getRandomArbitrary(0, 9));
+		holdwoodsy = between;
+		holdwoodsyarr[calarr1] = holdwoodsy;
+		fireplaceArray[i] = holdwoodsyarr[calarr1];
+		calarr1++;
+	}
+	if (firebounce%2 == 0)
+	for (var i = 178; i < 180; i ++) {
+	between = Math.round(getRandomArbitrary(0, 9));
+		holdwoodsy = between;
+		holdwoodsyarr[calarr1] = holdwoodsy;
+		fireplaceArray[i] = holdwoodsyarr[calarr1];
+		calarr1++;
+	} 
+	
+	
+	
+	
+	
+	for (var i = 252; i < 254; i ++) {
+	between = Math.round(getRandomArbitrary(0, 9));
+		holdwoodsy = between;
+		holdwoodsyarr[calarr1] = holdwoodsy;
+		fireplaceArray[i] = holdwoodsyarr[calarr1];
+		calarr1++;
+	}
+	for (var i = 236; i < 238; i ++) {
+	between = Math.round(getRandomArbitrary(0, 9));
+		holdwoodsy = between;
+		holdwoodsyarr[calarr1] = holdwoodsy;
+		fireplaceArray[i] = holdwoodsyarr[calarr1];
+		calarr1++;
+	} 
+		for (var i = 222; i < 224; i ++) {
+	between = Math.round(getRandomArbitrary(0, 9));
+		holdwoodsy = between;
+		holdwoodsyarr[calarr1] = holdwoodsy;
+		fireplaceArray[i] = holdwoodsyarr[calarr1];
+		calarr1++;
+	} 
+	if (firebounce%2 == 0)
+	for (var i = 204; i < 206; i ++) {
+	between = Math.round(getRandomArbitrary(0, 9));
+		holdwoodsy = between;
+		holdwoodsyarr[calarr1] = holdwoodsy;
+		fireplaceArray[i] = holdwoodsyarr[calarr1];
+		calarr1++;
+	}
+	if (firebounce%2 == 0)
+	for (var i = 188; i < 190; i ++) {
+	between = Math.round(getRandomArbitrary(0, 9));
+		holdwoodsy = between;
+		holdwoodsyarr[calarr1] = holdwoodsy;
+		fireplaceArray[i] = holdwoodsyarr[calarr1];
+		calarr1++;
+	} 
+	//woodsyorig
+	if (firebounce > 100)
+	firebounce = 0;
+}
 
 		}
+		
+		
+		
+
+
 
 	}
 
@@ -413,18 +463,18 @@ woodsy = 1;
 	//burst
 	
 	
-	
-	
+	between = Math.round(getRandomArbitrary(1, 3));
+
    
 
 	//woodsyorig
-  		for (var i = 239; i < 256; i ++) {
+  		for (var i = 224; i < 256; i ++) {
 		
 		
-	
+	between = Math.round(getRandomArbitrary(1, 3));
 		
 		
-		holdwoodsy = Math.round(getRandomArbitrary(1, 3));
+		holdwoodsy = between;
 		holdwoodsyarr[calarr1] = holdwoodsy;
 		
 		
@@ -432,30 +482,8 @@ woodsy = 1;
 	
 		calarr1++;
 	} 
-	    calarr1 = 0;
-		for (var i = 225; i < 239; i ++) {
 	
-	    if (caldyco > 1)
-		{
-		holdwoodsyarr2[calarr2] = holdwoodsyarr[calarr2];
-		fireplaceArray[i] = holdwoodsyarr2[calarr2];
-		}
-		
-		
-		calarr2++;
-	} 
-	    calarr2 = 0;
-	for (var i = 212; i < 221; i ++) {
-	
-		if (caldyco > 2)
-		{
-		holdwoodsyarr3[calarr3] = holdwoodsyarr2[calarr3];
-		
-		fireplaceArray[i] = holdwoodsyarr3[calarr3];
-		}
-			calarr3++;
-	} 
-	calarr3 = 0;
+	  
 
 
 if (woodanimation == 3)
@@ -473,7 +501,6 @@ if (toggle2 > randomheartbeat)
 toggle2 = 1;
 if (caldyco > 2)
 caldyco = 3;
-var between = Math.round(getRandomArbitrary(6, 8));
 
 fireplaceArray[209] = 0;
 fireplaceArray[222] = 0;
@@ -532,7 +559,7 @@ sparky1 = sparks1rand;
 }
 sparkgenerator(sparks1, sparky1, rememberburn1);
 sparks1++;
-if (sparks1 > 16)
+if (sparks1 > 9)
 {
   sparks1 = 0;
 }
@@ -545,7 +572,7 @@ sparky2 = sparks2rand;
 }
 sparkgenerator(sparks2, sparky2, rememberburn2);
 sparks2++;
-if (sparks2 > 32)
+if (sparks2 > 12)
 {
   sparks2 = 0;
 }
@@ -559,7 +586,7 @@ sparky3 = sparks3rand;
 }
 sparkgenerator(sparks3, sparky3, rememberburn3);
 sparks3++;
-if (sparks3 > 48)
+if (sparks3 > 15)
 {
   sparks3 = 0;
 }
@@ -571,7 +598,7 @@ sparky4 = sparks4rand;
 }
 sparkgenerator(sparks4, sparky4, rememberburn4);
 sparks4++;
-if (sparks4 > 64)
+if (sparks4 > 18)
 {
   sparks4 = 0;
 }
@@ -584,7 +611,7 @@ sparky5 = sparks5rand;
 }
 sparkgenerator(sparks5, sparky5, rememberburn5);
 sparks5++;
-if (sparks5 > 80)
+if (sparks5 > 21)
 {
   sparks5 = 0;
 }
@@ -597,7 +624,7 @@ sparky6 = sparks6rand;
 }
 sparkgenerator(sparks6, sparky6, rememberburn6);
 sparks6++;
-if (sparks6 > 96)
+if (sparks6 > 24)
 {
   sparks6 = 0;
 }
@@ -609,7 +636,7 @@ sparky7 = sparks7rand;
 }
 sparkgenerator(sparks7, sparky7, rememberburn7);
 sparks7++;
-if (sparks7 > 112)
+if (sparks7 > 27)
 {
   sparks7 = 0;
 }
@@ -622,13 +649,14 @@ sparky8 = sparks8rand;
 }
 sparkgenerator(sparks8, sparky8, rememberburn8);
 sparks8++;
-if (sparks8 > 128)
+if (sparks8 > 30)
 {
   sparks8 = 0;
 }
 }
 
 }
+
 var breaky = 0;
 var breakym = 0;
 var breakyadjust = 60;
@@ -747,12 +775,15 @@ fireplacePositionv = (display.height - display.width);
   
 
 
+	// fireplaceMoveXX(); 
+// 	fireplaceMoveX();
 	fireplaceMove();
+//	fireplaceMoveX();
 	fireplaceDraw();
 
 	
 	
-	const fps = 30;
+	const fps = 16;
 function animate() {
   // perform some animation task here
 
