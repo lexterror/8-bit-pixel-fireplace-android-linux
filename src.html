@@ -146,6 +146,7 @@ var holdwoodsyarr = [];
 var holdwoodsyarr2 = [];
 var holdwoodsyarr3 = [];
 var woodanimation = 0;
+var jello = 0;
 function fireplaceArrayInit() {
 
 	for (var i = 0; i < 256; i ++) {
@@ -224,7 +225,7 @@ bgy1 = bgrand;
 }
 sparkbggenerator(bg1, bgy1, bgrem1);
 bg1++;
-if (bg1 > 14)
+if (bg1 > 16)
 {
   bg1 = 4
 }
@@ -238,7 +239,7 @@ bgy2 = bgrand2;
 }
 sparkbggenerator(bg2, bgy2, bgrem2);
 bg2++;
-if (bg2 > 14)
+if (bg2 > 16)
 {
  bg2 = 4 ;
 }
@@ -252,7 +253,7 @@ bgy3 = bgrand3;
 }
 sparkbggenerator(bg3, bgy3, bgrem3);
 bg3++;
-if (bg3 > 14)
+if (bg3 > 16)
 {
   bg3 = 4;
 }
@@ -266,7 +267,7 @@ bgy4 = bgrand4;
 }
 sparkbggenerator(bg4, bgy4, bgrem4);
 bg4++;
-if (bg4 > 14)
+if (bg4 > 16)
 {
   bg4 = 4;
 }
@@ -280,7 +281,7 @@ bgy5 = bgrand5;
 }
 sparkbggenerator(bg5, bgy5, bgrem5);
 bg5++;
-if (bg5 > 14)
+if (bg5 > 16)
 {
   bg5 = 4;
 }
@@ -294,7 +295,7 @@ bgy6 = bgrand6;
 }
 sparkbggenerator(bg6, bgy6, bgrem6);
 bg6++;
-if (bg6 > 14)
+if (bg6 > 16)
 {
   bg6 = 4;
 }
@@ -308,7 +309,7 @@ bgy7 = bgrand7;
 }
 sparkbggenerator(bg7, bgy7, bgrem7);
 bg7++;
-if (bg7 > 14)
+if (bg7 > 16)
 {
   bg7 = 4;
 }
@@ -321,7 +322,7 @@ bgy8 = bgrand8;
 }
 sparkbggenerator(bg8, bgy8, bgrem8);
 bg8++;
-if (bg8 > 14)
+if (bg8 > 16)
 {
   bg8 = 4;
 }  
@@ -340,24 +341,21 @@ if (bg8 > 14)
 				//	var rz = Math.random();
 				//	var rz2 = Math.random();
 				//	var r = Math.random();
-					if (r > 0.2) {fireplaceArray[(y - 1 << 4) + x] = Math.round(Math.random() * 3) + 5}
-					if (r > 0.2) {fireplaceArray[(y << 4) + x] = Math.round(Math.random() * 2 + 1)}			//	if (r < 0.3) {fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 0;}
+					if (r > 3) {fireplaceArray[(y - 1 << 4) + x] = Math.round(Math.random() * 3) + 5}
+					if (r > 3) {fireplaceArray[(y << 4) + x] = Math.round(Math.random() * 2 + 1)}			//	if (r < 0.3) {fireplaceArray[(y + swayy - 1 << 4 + gotcha) + x + swayx] = 0;}
 			
 				}
 			}
 			
 	
 			if (id > 4 && id < 16) {
-			  var r = getRandomArbitrary(0.00,0.3);
+			  var r = getRandomArbitrary(0.27,0.4);
 			  
 			//	if (r > 0.3) fireplaceArray[(y - 1 << 4) + x] = 4;
-				if (r < 0.1) fireplaceArray[(y - 1 << 4) + x] = Math.round(Math.random() * 2 + 1) + 4;
+				if (r < 0.3) fireplaceArray[(y - 1 << 4) + x] = Math.round(Math.random() * 2 + 1) + 4;
 				//if (r > 0.5 && r < 0.999) fireplaceArray[(y - 1 << 4) + x] = 0;	
 				fireplaceArray[(y << 4) + x] = 0;
-				var r = getRandomArbitrary(0.29,0.4);
-			  
-			//	if (r > 0.3) fireplaceArray[(y - 1 << 4) + x] = 4;
-			
+
 				
       }		// end of X
       
@@ -459,15 +457,35 @@ if (bg8 > 14)
 			
 			
 	var between = Math.round(getRandomArbitrary(4, 9));
- if (firebounce%2 == 0)
+ if (firebounce == 0)
  {
-   TZR = 1;
-   TZL = 1;
+  TZR = -1;
+  TZL = 1;
+//  TZL = 0;
+  // TZL = 0;
+
+ 
  }
-  if (firebounce%2 != 0)
+  if (firebounce == 1)
  {
-   TZR = -1;
-   TZL = -1;
+     TZR = 0;
+       TZL = 0;
+     //TZL = -1;
+   
+ }
+  if (firebounce == 2)
+ {
+     TZR = 1;
+       TZL = 1;
+     //TZL = -1;
+   
+ }
+   if (firebounce == 3)
+ {
+     TZR = 0;
+       TZL = 0;
+     //TZL = -1;
+   
  }
    if (x > 3 && x < 13)
 	{
@@ -485,25 +503,25 @@ if (bg8 > 14)
 		//+3
    for (var i = 229; i < 234; i ++) {
   
-   	between = Math.round(getRandomArbitrary(4, 9));
+   	between = Math.round(getRandomArbitrary(7, 8));
 		holdwoodsy = between;
 		holdwoodsyarr[calarr1] = holdwoodsy;
 		fireplaceArray[i] = holdwoodsyarr[calarr1];
 		calarr1++;
 	}  
 		//+ 3
-	for (var i = 212; i < 220; i ++) {
+	for (var i = (212); i < (221); i ++) {
   
-   	between = Math.round(getRandomArbitrary(4, 9));
+   	between = Math.round(getRandomArbitrary(9, 9));
 		holdwoodsy = between;
 		holdwoodsyarr[calarr1] = holdwoodsy;
 		fireplaceArray[i] = holdwoodsyarr[calarr1];
 		calarr1++;
 	}  
 	  
-		for (var i = 195; i < 205; i ++) {
+		for (var i = (196 + TZR); i < (205 + TZR); i ++) {
   
-   	between = Math.round(getRandomArbitrary(4, 9));
+   	between = Math.round(getRandomArbitrary(8, 9));
 		holdwoodsy = between;
 		holdwoodsyarr[calarr1] = holdwoodsy;
 		fireplaceArray[i] = holdwoodsyarr[calarr1];
@@ -511,9 +529,9 @@ if (bg8 > 14)
 	}
 //////S5  
 	  
-		for (var i = (180 + TZR); i < (188 + TZR); i ++) {
+		for (var i = (180 + TZR + jello); i < (188 + TZR + jello); i ++) {
   
-   	between = Math.round(getRandomArbitrary(5, 6));
+   	between = Math.round(getRandomArbitrary(7, 8));
 		holdwoodsy = between;
 		holdwoodsyarr[calarr1] = holdwoodsy;
 		fireplaceArray[i] = holdwoodsyarr[calarr1];
@@ -539,7 +557,7 @@ if (bg8 > 14)
 	}
 //// S4
 	  
-		for (var i = (164 - TZL); i < (173 -TZL); i ++) {
+		for (var i = (164 + TZR + jello); i < (173  + TZR + jello); i ++) {
   
    	between = Math.round(getRandomArbitrary(6, 7));
 		holdwoodsy = between;
@@ -568,9 +586,9 @@ if (bg8 > 14)
 		calarr1++;
 	}
 /////S3
-		for (var i = (148 + TZR); i < (156+TZR); i ++) {
+		for (var i = (149 + TZR + jello); i < (155 + TZR + jello); i ++) {
   
-   	between = Math.round(getRandomArbitrary(7, 8));
+   	between = Math.round(getRandomArbitrary(5, 6));
 		holdwoodsy = between;
 		holdwoodsyarr[calarr1] = holdwoodsy;
 		fireplaceArray[i] = holdwoodsyarr[calarr1];
@@ -594,9 +612,10 @@ if (bg8 > 14)
 	}
 
 //////// S2
-		for (var i = (133 - TZL); i < (139 - TZL); i ++) {
+
+		for (var i = (134 + TZR + jello); i < (139 + TZR + jello); i ++) {
   
-   	between = Math.round(getRandomArbitrary(8, 9));
+   	between = Math.round(getRandomArbitrary(4, 5));
 		holdwoodsy = between;
 		holdwoodsyarr[calarr1] = holdwoodsy;
 		fireplaceArray[i] = holdwoodsyarr[calarr1];
@@ -620,9 +639,10 @@ if (bg8 > 14)
 		calarr1++;
 	}
 	/////////// S1
-		for (var i = (118+TZR); i < (122+TZR); i ++) {
+
+		for (var i = (118+TZR + jello); i < (122 +TZR + jello); i ++) {
   
-   	between = Math.round(getRandomArbitrary(0, 9));
+   	between = Math.round(getRandomArbitrary(0, 5));
 		holdwoodsy = between;
 		holdwoodsyarr[calarr1] = holdwoodsy;
 		fireplaceArray[i] = holdwoodsyarr[calarr1];
@@ -636,6 +656,7 @@ if (bg8 > 14)
 		fireplaceArray[i] = holdwoodsyarr[calarr1];
 		calarr1++;
 	}
+
 				for (var i = 122; i < 124; i ++) {
   
    	between = Math.round(getRandomArbitrary(0, 9));
@@ -655,7 +676,7 @@ if (bg8 > 14)
 	{
 	
 	//woodsyorig
-	if (firebounce > 128)
+	if (firebounce > 3)
 	firebounce = 0;
 }
 
@@ -839,6 +860,29 @@ spark1 = spark1 - 160;
 //fireplaceArray[burn] = 1;
 fireplaceArray[spark1] = 19;
 }
+if (mybully == 12)
+{
+//burn = spark;
+spark1 = spark1 - 176;
+//fireplaceArray[burn] = 1;
+fireplaceArray[spark1] = 19;
+}
+if (mybully == 12)
+{
+//burn = spark;
+spark1 = spark1 - 192;
+//fireplaceArray[burn] = 1;
+fireplaceArray[spark1] = 19;
+}
+if (mybully == 13)
+{
+//burn = spark;
+spark1 = spark1 - 208;
+//fireplaceArray[burn] = 1;
+fireplaceArray[spark1] = 19;
+}
+
+
 }
 }
 
@@ -1188,16 +1232,19 @@ function fireplaceDraw() {
 		for (var y = 0; y < 16; y ++) {
 			var id = fireplaceArray[(y << 4) + x];
 			var id2 = fireplaceArray[(y << 4) + x];
-			var hues = ['0', '21', '20', '15', '70', '67', '65', '60', '58', '56', '54', '0', '19', '20', '22', '23', '24', '25', '26', '45']; 
-			var sats = ['0%', '50%', '50%', '50%', '100%', '100%', '100%', '100%', '100%', '100%', '0%', '0%', '0%', '0%','20%', '20%', '20%', '%20', '100%', '100%', '70%'];
+			var hues = ['0', '21', '20', '15', '35', '30', '40', '50', '60', '65', '70', '0', '19', '20', '22', '23', '24', '25', '26', '45']; 
+			var huesx = ['0', '21', '20', '15', '54', '56', '58', '60', '63', '65', '67', '0', '19', '20', '22', '23', '24', '25', '26', '45']; 
+		
+			var sats = ['0%', '100%', '100%', '100%', '100%', '100%', '100%', '100%', '100%', '100%', '100%', '0%', '0%', '0%','20%', '20%', '20%', '%20', '100%', '100%', '70%'];
 			
       var modhue = "";
       var modsats = "";
       var modlight = "";
       var originalhue = hues[id];
+      var originalhuex = huesx[id];
       var originalsats = sats[id];
       var originallightness = fireplaceColors[id];
-		  modhue = originalhue - 30;
+		  modhue = originalhue - 15;
 		  modsats = originalsats;
 		  modlight = originallightness;
   
