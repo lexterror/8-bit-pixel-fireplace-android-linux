@@ -73,6 +73,31 @@ var fireplaceColors = ['0%', '0%', '0%', '0%', '0%', '55%', '55%', '55%', '50%',
 var poligon = ""
 
 //fireplacePosition = (display.width - display.height) / 2;
+var bg1 = 3;
+var bg2 = 4;
+var bg3 = 5;
+var bg4 = 6;
+var bg5 = 7;
+var bg6 = 8;
+var bg7 = 9;
+var bg8 = 10;
+var bgy1 = 3;
+var bgy2 = 4;
+var bgy3 = 5;
+var bgy4 = 6;
+var bgy5 = 7;
+var bgy6 = 8;
+var bgy7 = 9;
+var bgy8 =10;
+var bgrem1 = 0;
+var bgrem2 = 0;
+var bgrem3 = 0;
+var bgrem4 = 0;
+var bgrem5 = 0;
+var bgrem6 = 0;
+var bgrem7 = 0;
+var bgrem8 = 0;
+
 
 var dark1 = 3;
 var dark2 = 4;
@@ -182,11 +207,127 @@ var randomheartbeat = 0;
 		 
 
 function fireplaceMove() {
-
+fireplaceArrayInit();
   bounce = getRandomArbitrary(0, 0);
   bouncex = 0.79;
   retro = getRandomArbitrary(0.7, 0.7);
-	for (var x = (0 + ted); x < (16 - ted); x++) {
+  
+
+//MAGICKBG
+
+
+if (bg1 == 4)
+{
+var bgrand = Math.round(getRandomArbitrary(240, 256));
+bgrem1 = bgrand;
+bgy1 = bgrand;
+}
+sparkbggenerator(bg1, bgy1, bgrem1);
+bg1++;
+if (bg1 > 14)
+{
+  bg1 = 4
+}
+
+
+if (bg2 == 4)
+{
+var bgrand2 = Math.round(getRandomArbitrary(240, 256));
+bgrem2 = bgrand2;
+bgy2 = bgrand2;
+}
+sparkbggenerator(bg2, bgy2, bgrem2);
+bg2++;
+if (bg2 > 14)
+{
+ bg2 = 4 ;
+}
+
+
+if (bg3 == 4)
+{
+var bgrand3 = Math.round(getRandomArbitrary(240, 256));
+bgrem3 = bgrand3;
+bgy3 = bgrand3;
+}
+sparkbggenerator(bg3, bgy3, bgrem3);
+bg3++;
+if (bg3 > 14)
+{
+  bg3 = 4;
+}
+
+
+if (bg4 == 4)
+{
+var bgrand4 = Math.round(getRandomArbitrary(240, 256));
+bgrem4 = bgrand4;
+bgy4 = bgrand4;
+}
+sparkbggenerator(bg4, bgy4, bgrem4);
+bg4++;
+if (bg4 > 14)
+{
+  bg4 = 4;
+}
+
+
+if (bg5 == 4)
+{
+var bgrand5 = Math.round(getRandomArbitrary(240, 256));
+bgrem5 = bgrand5;
+bgy5 = bgrand5;
+}
+sparkbggenerator(bg5, bgy5, bgrem5);
+bg5++;
+if (bg5 > 14)
+{
+  bg5 = 4;
+}
+
+
+if (bg6 == 4)
+{
+var bgrand6 = Math.round(getRandomArbitrary(240, 256));
+bgrem6 = bgrand6;
+bgy6 = bgrand6;
+}
+sparkbggenerator(bg6, bgy6, bgrem6);
+bg6++;
+if (bg6 > 14)
+{
+  bg6 = 4;
+}
+
+
+if (bg7 == 4)
+{
+var bgrand7 = Math.round(getRandomArbitrary(240, 256));
+bgrem7 = bgrand7;
+bgy7 = bgrand7;
+}
+sparkbggenerator(bg7, bgy7, bgrem7);
+bg7++;
+if (bg7 > 14)
+{
+  bg7 = 4;
+}
+
+if (bg8 == 4)
+{
+var bgrand8 = Math.round(getRandomArbitrary(240, 256));
+bgrem8 = bgrand8;
+bgy8 = bgrand8;
+}
+sparkbggenerator(bg8, bgy8, bgrem8);
+bg8++;
+if (bg8 > 14)
+{
+  bg8 = 4;
+}  
+  
+  
+	for (var x = (2 + ted); x < (14 - ted); x++) {
 		for (var y = (0 + wavvy); y < (16); y++) {
 			var id = fireplaceArray[(y << 4 + gotcha) + x + swayx];
 			if (id == 1 || id == 2 || id == 3)  {
@@ -630,6 +771,76 @@ fireplaceArray[223] = 0;
 fireplaceArray[208] = 0; 
 //fireplaceArray[238] = between;
 
+function sparkbggenerator(mybully, spark, burn) {
+var spark1 = spark;
+var betweenx = Math.round(getRandomArbitrary(6, 8));
+if (mybully < 16)
+{
+if (mybully == 3)
+{
+//burn = spark;
+spark1 = spark1 - 32;
+//fireplaceArray[burn] = 1;
+fireplaceArray[spark1] = 5;
+}
+if (mybully == 4)
+{
+//burn = spark;
+spark1 = spark1 - 48;
+//fireplaceArray[burn] = 1;
+fireplaceArray[spark1] = 5;
+}
+if (mybully == 5)
+{
+//burn = spark;
+spark1 = spark1 - 64;
+//fireplaceArray[burn] = 1;
+fireplaceArray[spark1] = 5;
+}
+if (mybully == 6)
+{
+//burn = spark;
+spark1 = spark1 - 70;
+//fireplaceArray[burn] = 1;
+fireplaceArray[spark1] = 5;
+}
+if (mybully == 7)
+{
+//burn = spark;
+spark1 = spark1 - 96;
+//fireplaceArray[burn] = 1;
+fireplaceArray[spark1] = 5;
+}
+if (mybully == 8)
+{
+//burn = spark;
+spark1 = spark1 - 112;
+//fireplaceArray[burn] = 1;
+fireplaceArray[spark1] = 5;
+}
+if (mybully == 9)
+{
+//burn = spark;
+spark1 = spark1 - 128;
+//fireplaceArray[burn] = 1;
+fireplaceArray[spark1] = 5;
+}
+if (mybully == 10)
+{
+//burn = spark;
+spark1 = spark1 - 144;
+//fireplaceArray[burn] = 1;
+fireplaceArray[spark1] = 5;
+}
+if (mybully == 11)
+{
+//burn = spark;
+spark1 = spark1 - 160;
+//fireplaceArray[burn] = 1;
+fireplaceArray[spark1] = 5;
+}
+}
+}
 
 if (caldyco == 3)
 {
@@ -857,7 +1068,7 @@ if (dark8 > 14)
   dark8 = 4;
 }
 
-
+// SPARKz
 if (sparks1 == 0)
 {
 var sparks1rand = Math.round(getRandomArbitrary(240, 256));
@@ -1031,13 +1242,7 @@ function fireplaceDraw() {
 		  modlight = modl2.toString() + "%";
       }	   	
       
-        if (y == 0 || y == 1)
-      {
-      var modl = originallightness.replace("%", "");
-      var modl2 = 0;
-		  modlight = modl2.toString() + "%";
-        
-      }    
+
 	     
 
 
