@@ -69,7 +69,7 @@ reqAniFrame = (function() {
 })();
 
 var fireplaceArray = new Array(256);
-var fireplaceColors = ['0%', '0%', '0%', '0%', '0%', '55%', '55%', '55%', '50%', '50%', '50%', '50%', '50%', '5%', '8%', '11%', '14%', '11%', '12%', '55%', '55%','55%', '55%', '55%', '55%'];
+var fireplaceColors = ['0%', '0%', '0%', '0%', '0%', '55%', '55%', '55%', '50%', '50%', '50%', '50%', '50%', '5%', '8%', '11%', '14%', '11%', '12%', '55%', '55%','50%', '50%', '55%', '55%'];
 var poligon = ""
 
 //fireplacePosition = (display.width - display.height) / 2;
@@ -99,14 +99,14 @@ var bgrem7 = 0;
 var bgrem8 = 0;
 
 
-var dark1 = 10;
-var dark2 = 6;
-var dark3 = 9;
-var dark4 = 11;
-var dark5 = 10;
-var dark6 = 8;
-var dark7 = 7;
-var dark8 = 5;
+var dark1 = 1;
+var dark2 = 2;
+var dark3 = 3;
+var dark4 = 4;
+var dark5 = 6;
+var dark6 = 5;
+var dark7 = 6;
+var dark8 = 7;
 var darky1 = 3;
 var darky2 = 4;
 var darky3 = 5;
@@ -123,6 +123,32 @@ var darkrem5 = 0;
 var darkrem6 = 0;
 var darkrem7 = 0;
 var darkrem8 = 0;
+
+var dark1z = 12;
+var dark2z = 13;
+var dark3z = 14;
+var dark4z = 15;
+var dark5z = 16;
+var dark6z = 17;
+var dark7z = 18;
+var dark8z = 19;
+var darky1z = 3;
+var darky2z = 4;
+var darky3z = 5;
+var darky4z = 6;
+var darky5z = 7;
+var darky6z = 8;
+var darky7z = 9;
+var darky8z =10;
+var darkrem1z = 0;
+var darkrem2z = 0;
+var darkrem3z = 0;
+var darkrem4z = 0;
+var darkrem5z = 0;
+var darkrem6z = 0;
+var darkrem7z = 0;
+var darkrem8z = 0;
+
 
 var sparks1 = 1;
 var sparks2 = 2;
@@ -844,7 +870,7 @@ fireplaceArray[spark1] = 4;
 if (mybully == 6)
 {
 //burn = spark;
-spark1 = spark1 - 70;
+spark1 = spark1 - 80;
 //fireplaceArray[burn] = 1;
 fireplaceArray[spark1] = 4;
 }
@@ -1037,6 +1063,117 @@ if (dark8 > 14)
 {
   dark8 = 3;
 }
+// darkZZZ
+
+if (dark1z == 3)
+{
+var darkrandz = Math.round(getRandomArbitrary(244, 252));
+darkrem1z = darkrandz;
+darky1z = darkrandz;
+}
+sparkdarkgenerator(dark1z, darky1z, darkrem1z);
+dark1z++;
+if (dark1z > 26)
+{
+  dark1z = 3
+}
+
+
+if (dark2z == 3)
+{
+var darkrand2z = Math.round(getRandomArbitrary(244, 252));
+darkrem2z = darkrand2z;
+darky2z = darkrand2z;
+}
+sparkdarkgenerator(dark2z, darky2z, darkrem2z);
+dark2z++;
+if (dark2z > 26)
+{
+  dark2z = 3;
+}
+
+
+if (dark3z == 3)
+{
+var darkrand3z = Math.round(getRandomArbitrary(244, 252));
+darkrem3z = darkrand3z;
+darky3z = darkrand3z;
+}
+sparkdarkgenerator(dark3z, darky3z, darkrem3z);
+dark3z++;
+if (dark3z > 26)
+{
+  dark3z = 3;
+}
+
+
+if (dark4z == 3)
+{
+var darkrand4z = Math.round(getRandomArbitrary(244, 252));
+darkrem4z = darkrand4z;
+darky4z = darkrand4z;
+}
+sparkdarkgenerator(dark4z, darky4z, darkrem4z);
+dark4z++;
+if (dark4z > 26)
+{
+  dark4z = 3;
+}
+
+
+if (dark5z == 3)
+{
+var darkrand5z = Math.round(getRandomArbitrary(244, 252));
+darkrem5z = darkrand5z;
+darky5z = darkrand5z;
+}
+sparkdarkgenerator(dark5z, darky5z, darkrem5z);
+dark5z++;
+if (dark5z > 26)
+{
+  dark5z = 3;
+}
+
+
+if (dark6z == 3)
+{
+var darkrand6z = Math.round(getRandomArbitrary(244, 252));
+darkrem6z = darkrand6z;
+darky6z = darkrand6z;
+}
+sparkdarkgenerator(dark6z, darky6z, darkrem6z);
+dark6z++;
+if (dark6z > 26)
+{
+  dark6z = 3;
+}
+
+
+if (dark7z == 3)
+{
+var darkrand7z = Math.round(getRandomArbitrary(244, 252));
+darkrem7z = darkrand7z;
+darky7z = darkrand7z;
+}
+sparkdarkgenerator(dark7z, darky7z, darkrem7z);
+dark7z++;
+if (dark7z > 26)
+{
+  dark7z = 3;
+}
+
+if (dark8z == 3)
+{
+var darkrand8z = Math.round(getRandomArbitrary(244, 252));
+darkrem8z = darkrand8z;
+darky8z = darkrand8z;
+}
+sparkdarkgenerator(dark8z, darky8z, darkrem8z);
+dark8z++;
+if (dark8z > 26)
+{
+  dark8z = 3;
+}
 //HOLD WOOD HOLY
   		for (var i = 240; i < 256; i ++) {
 		
@@ -1203,7 +1340,7 @@ function fireplaceDraw() {
 		for (var y = 0; y < 16; y ++) {
 			var id = fireplaceArray[(y << 4) + x];
 			var id2 = fireplaceArray[(y << 4) + x];
-			var hues = ['0', '21', '20', '15', '0', '58', '52', '60', '50', '60', '70', '35', '35', '35', '35', '35', '35', '35', '35', '39', '58', '58', '65', '70']; 
+			var hues = ['0', '21', '20', '15', '0', '50', '50', '50', '50', '60', '70', '35', '35', '35', '35', '35', '35', '35', '35', '35', '50', '50', '65', '70']; 
 			var huesx = ['0', '21', '20', '15', '54', '56', '58', '60', '63', '65', '67', '22', '19', '20', '22', '23', '24', '25', '26', '45']; 
 		
 			var sats = ['0%', '100%', '100%', '100%', '100%', '100%', '100%', '100%', '100%', '100%', '100%', '40%', '20%', '21%','22%', '23%', '24%', '%55', '100%', '100%', '100%', '100%', '100%', '100%', '100%'];
@@ -1215,7 +1352,7 @@ function fireplaceDraw() {
       var originalhuex = huesx[id];
       var originalsats = sats[id];
       var originallightness = fireplaceColors[id];
-		  modhue = originalhue - 25;
+		  modhue = originalhue - 18;
 		  modsats = originalsats;
 		  modlight = originallightness;
   
