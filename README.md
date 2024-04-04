@@ -20,7 +20,8 @@ Linux AMD64 Ubuntu or Debian based OS<br>
 <br><br>
 DEB/APK is in the release section of this repository
 <br><br>
-![az_recorder_20240328_071257-ezgif com-cut](https://github.com/lexterror/8-bit-pixel-fireplace-android-linux/assets/16135535/cd7837c4-455a-4f40-bd77-75c1e59b9bfa)
+![az_recorder_20240403_191740-ezgif com-video-to-gif-converter](https://github.com/lexterror/8-bit-pixel-fireplace-android-linux/assets/16135535/d4779e4c-b1a2-490f-9896-2c77424a07e2)
+
 <br>
 
 
