@@ -69,7 +69,7 @@ reqAniFrame = (function() {
 })();
 
 var fireplaceArray = new Array(256);
-var fireplaceColors = ['0%', '0%', '0%', '0%', '0%', '55%', '55%', '55%', '50%', '50%', '50%', '50%', '50%', '5%', '8%', '11%', '14%', '11%', '12%', '55%', '55%','50%', '50%', '55%', '55%', '55%', '55%'];
+var fireplaceColors = []; 
 var poligon = ""
 
 //fireplacePosition = (display.width - display.height) / 2;
@@ -98,6 +98,31 @@ var bgrem6 = 0;
 var bgrem7 = 0;
 var bgrem8 = 0;
 
+var bg1z = 1;
+var bg2z = 2;
+var bg3z = 3;
+var bg4z = 4;
+var bg5z = 5;
+var bg6z = 6;
+var bg7z = 7;
+var bg8z = 8;
+var bgy1z = 3;
+var bgy2z = 4;
+var bgy3z = 5;
+var bgy4z = 6;
+var bgy5z = 7;
+var bgy6z = 8;
+var bgy7z = 9;
+var bgy8z =10;
+var bgrem1z = 0;
+var bgrem2z = 0;
+var bgrem3z = 0;
+var bgrem4z = 0;
+var bgrem5z = 0;
+var bgrem6z = 0;
+var bgrem7z = 0;
+var bgrem8z = 0;
+
 
 var dark1 = 1;
 var dark2 = 2;
@@ -123,7 +148,7 @@ var darkrem5 = 0;
 var darkrem6 = 0;
 var darkrem7 = 0;
 var darkrem8 = 0;
-
+var slowwood = 0;
 var dark1z = 12;
 var dark2z = 13;
 var dark3z = 14;
@@ -173,6 +198,7 @@ var holdwoodsyarr2 = [];
 var holdwoodsyarr3 = [];
 var woodanimation = 0;
 var jello = 0;
+var smart2 = 0;
 function fireplaceArrayInit() {
 
 	for (var i = 0; i < 256; i ++) {
@@ -207,10 +233,12 @@ var mylayout =0;
 var toggle1 = 1;
 var toggle2 = 2;
 var toggle3 = 3;
+var smart = 0;
 var TZR = 0;
 var TZL = 0;
 var slide =0;
-
+var divine=0;
+var divinex = 0;
 var slider1 = 0;
 var slider2 = 0;
 var slider3 = 0;
@@ -238,7 +266,7 @@ var randomheartbeat = 0;
 		 var wavvy = 0;
 		 var zig =0;
 		 var zag = 0;
-		 
+		 var twofeettall = 0;
 		 
 		 
 		 
@@ -252,6 +280,118 @@ fireplaceArrayInit();
   retro = getRandomArbitrary(0.7, 0.7);
   
 
+//MAGICKBG
+
+
+if (bg1z == 4)
+{
+var bgrandz = Math.round(getRandomArbitrary(240, 256));
+bgrem1z = bgrandz;
+bgy1z = bgrandz;
+}
+sparkbggenerator(bg1z, bgy1z, bgrem1z);
+bg1z++;
+if (bg1z > 16)
+{
+  bg1z = 4
+}
+
+
+if (bg2z == 4)
+{
+var bgrand2z = Math.round(getRandomArbitrary(240, 256));
+bgrem2z = bgrand2z;
+bgy2z = bgrand2z;
+}
+sparkbggenerator(bg2z, bgy2z, bgrem2z);
+bg2z++;
+if (bg2z > 16)
+{
+ bg2z = 4 ;
+}
+
+
+if (bg3z == 4)
+{
+var bgrand3z = Math.round(getRandomArbitrary(240, 256));
+bgrem3z = bgrand3z;
+bgy3z = bgrand3z;
+}
+sparkbggenerator(bg3z, bgy3z, bgrem3z);
+bg3z++;
+if (bg3z > 16)
+{
+  bg3z = 4;
+}
+
+
+if (bg4z == 4)
+{
+var bgrand4z = Math.round(getRandomArbitrary(240, 256));
+bgrem4z = bgrand4z;
+bgy4z = bgrand4z;
+}
+sparkbggenerator(bg4z, bgy4z, bgrem4z);
+bg4z++;
+if (bg4z > 16)
+{
+  bg4z = 4;
+}
+
+
+if (bg5z == 4)
+{
+var bgrand5z = Math.round(getRandomArbitrary(240, 256));
+bgrem5z = bgrand5z;
+bgy5z = bgrand5z;
+}
+sparkbggenerator(bg5z, bgy5z, bgrem5z);
+bg5z++;
+if (bg5z > 16)
+{
+  bg5z = 4;
+}
+
+
+if (bg6z == 4)
+{
+var bgrand6z = Math.round(getRandomArbitrary(240, 256));
+bgrem6z = bgrand6z;
+bgy6z = bgrand6z;
+}
+sparkbggenerator(bg6z, bgy6z, bgrem6z);
+bg6z++;
+if (bg6z > 16)
+{
+  bg6z = 4;
+}
+
+
+if (bg7z == 4)
+{
+var bgrand7z = Math.round(getRandomArbitrary(240, 256));
+bgrem7z = bgrand7z;
+bgy7z = bgrand7z;
+}
+sparkbggenerator(bg7z, bgy7z, bgrem7z);
+bg7z++;
+if (bg7z > 16)
+{
+  bg7z = 4;
+}
+
+if (bg8z == 4)
+{
+var bgrand8z = Math.round(getRandomArbitrary(240, 256));
+bgrem8z = bgrand8z;
+bgy8z = bgrand8z;
+}
+sparkbggenerator(bg8z, bgy8z, bgrem8z);
+bg8z++;
+if (bg8z > 16)
+{
+  bg8z = 4;
+}  
 //MAGICKBG
 
 
@@ -545,47 +685,79 @@ slider7 = 0;
  var top3 = 3;
  var top4 = 2;
  var top5 = 1;
+ twofeettall = Math.round(getRandomArbitrary(0,0));
+ 
+ if (smart == -1)
+ {
+ divine = Math.round(getRandomArbitrary(-1,0));
+ }
+ if (smart == 0)
+ {
+divine = Math.round(getRandomArbitrary(-1,1));
+}
+ if (smart == 1)
+ {
+divine = Math.round(getRandomArbitrary(0,1));
+}
+if (smart2 == -1)
+ {
+ divinex = Math.round(getRandomArbitrary(-1,0));
+ }
+ if (smart2 == 0)
+ {
+divinex = Math.round(getRandomArbitrary(-1,1));
+}
+ if (smart2 == 1)
+ {
+divinex = Math.round(getRandomArbitrary(0,1));
+}
+
+var topbot = 0;
+
+  if (twofeettall == 0)
+ {
+ 
    if (x > 0 && x < 15)
 	{
 		//+3
 		//+ 3
-		for (var i = (240); i < (256); i ++) {
+		for (var i = (240 - topbot + divinex); i < (256 - topbot + divinex); i ++) {
    	between = Math.round(getRandomArbitrary(2, 5));
 		fireplaceArray[i] = between;
 	}  
-		for (var i = (224); i < (239); i ++) {
+		for (var i = (224 - topbot + divinex); i < (239 - topbot + divinex); i ++) {
    	between = Math.round(getRandomArbitrary(2, 5));
 		fireplaceArray[i] = between;
 	}  
-			for (var i = (208); i < (224); i ++) {
+			for (var i = (208 - topbot + divinex); i < (224 - topbot + divinex); i ++) {
    	between = Math.round(getRandomArbitrary(2, 5));
 		fireplaceArray[i] = between;
 	}  
-		for (var i = (192); i < (208); i ++) {
+		for (var i = (192 - topbot + divinex); i < (208 - topbot + divinex); i ++) {
    	between = Math.round(getRandomArbitrary(2, 5));
 		fireplaceArray[i] = between;
 	}  
-		for (var i = (176); i < (192); i ++) {
+		for (var i = (176 - topbot + divinex); i < (192 - topbot + divinex); i ++) {
    	between = Math.round(getRandomArbitrary(2, 5));
 		fireplaceArray[i] = between;
 	}  
-		for (var i = (160 + top5); i < (176 - top5); i ++) {
+		for (var i = (160 + top5 - topbot + divine); i < (176 - top5 - topbot + divine); i ++) {
    	between = Math.round(getRandomArbitrary(2, 5));
 		fireplaceArray[i] = between;
 	}  
-		for (var i = (144 + top4 ); i < (160 - top4); i ++) {
+		for (var i = (144 + top4 - 32 + divine); i < (160 - top4 - topbot + divine); i ++) {
    	between = Math.round(getRandomArbitrary(2, 5));
 		fireplaceArray[i] = between;
 	}  
-		for (var i = (128 + top3 ); i < (144 - top3); i ++) {
+		for (var i = (128 + top3  - topbot + divine); i < (144 - top3 - topbot + divine); i ++) {
    	between = Math.round(getRandomArbitrary(2, 5));
 		fireplaceArray[i] = between;
 	}  
-		for (var i = (112 + top2); i < (128 - top2); i ++) {
+		for (var i = (112 + top2 - topbot + divine); i < (128 - top2 - topbot + divine); i ++) {
    	between = Math.round(getRandomArbitrary(2, 5));
 		fireplaceArray[i] = between;
 	}  
-		for (var i = (96 + top1); i < (112 - top1); i ++) {
+		for (var i = (96 + top1 - topbot + divine); i < (112 - top1 - topbot + divine); i ++) {
    	between = Math.round(getRandomArbitrary(2, 5));
 		fireplaceArray[i] = between;
 	}  
@@ -596,44 +768,44 @@ slider7 = 0;
 		//+3
 		//+ 3
 		var lev = 1;
-		for (var i = (240 + lev); i < (256 - lev); i ++) {
+		for (var i = (240 + lev - topbot + divinex); i < (256 - lev - topbot + divinex); i ++) {
    	between = Math.round(getRandomArbitrary(4, 5));
 		fireplaceArray[i] = between;
 	}  
-		for (var i = (224 + lev); i < (239 - lev); i ++) {
+		for (var i = (224 + lev - topbot + divinex); i < (239 - lev - topbot + divinex); i ++) {
    	between = Math.round(getRandomArbitrary(4, 5));
 		fireplaceArray[i] = between;
 	}  
-			for (var i = (208 + lev); i < (224 - lev); i ++) {
+			for (var i = (208 + lev - topbot + divinex); i < (224 - lev - topbot + divinex); i ++) {
    	between = Math.round(getRandomArbitrary(4, 5));
 		fireplaceArray[i] = between;
 	}  
-		for (var i = (192 + lev); i < (208 - lev); i ++) {
+		for (var i = (192 + lev - topbot + divinex); i < (208 - lev - topbot + divinex); i ++) {
    	between = Math.round(getRandomArbitrary(4, 5));
 		fireplaceArray[i] = between;
 	}  
-		for (var i = (176 + lev); i < (192 - lev); i ++) {
+		for (var i = (176 + lev - topbot + divinex); i < (192 - lev - topbot + divinex); i ++) {
    	between = Math.round(getRandomArbitrary(4, 5));
 		fireplaceArray[i] = between;
 	}  
-		for (var i = (160 + lev + top5); i < (176 - lev - top5); i ++) {
+		for (var i = (160 + lev + top5 - topbot + divine); i < (176 - lev - top5 - topbot + divine); i ++) {
    	between = Math.round(getRandomArbitrary(4, 5));
 		fireplaceArray[i] = between;
 	}  
-		for (var i = (144 + lev + top4); i < (160 - lev - top4); i ++) {
+		for (var i = (144 + lev + top4 - topbot + divine); i < (160 - lev - top4 - topbot + divine); i ++) {
    	between = Math.round(getRandomArbitrary(4, 5));
 		fireplaceArray[i] = between;
 	}  
-		for (var i = (128 + lev + top3); i < (144 - lev - top3); i ++) {
+		for (var i = (128 + lev + top3 - topbot + divine); i < (144 - lev - top3 - topbot + divine); i ++) {
    	between = Math.round(getRandomArbitrary(4, 5));
 		fireplaceArray[i] = between;
 	}  
-		for (var i = (112 + lev + top2); i < (128 - lev - top2); i ++) {
+		for (var i = (112 + lev + top2 - topbot + divine); i < (128 - lev - top2 - topbot + divine); i ++) {
    	between = Math.round(getRandomArbitrary(4, 5));
 		fireplaceArray[i] = between;
 	}  
-		for (var i = (96 + lev + top1); i < (112 - lev - top1); i ++) {
-   	between = Math.round(getRandomArbitrary(4, 5));
+		for (var i = (96 + lev + top1 - topbot + divine); i < (112 - lev - top1 - topbot + divine); i ++) {
+   	between = Math.round(getRandomArbitrary(3, 5));
 		fireplaceArray[i] = between;
 	}  
 	  
@@ -646,35 +818,330 @@ slider7 = 0;
 		//+3
 		//+ 3
 		var lev = 2;
-		for (var i = (240 + lev); i < (256 - lev); i ++) {
+		for (var i = (240 + lev - topbot + divinex); i < (256 - lev - topbot + divinex); i ++) {
    	between = Math.round(getRandomArbitrary(21, 22));
 		fireplaceArray[i] = between;
 	}  
-		for (var i = (224 + lev); i < (239 - lev); i ++) {
+		for (var i = (224 + lev - topbot + divinex); i < (239 - lev - topbot + divinex); i ++) {
    	between = Math.round(getRandomArbitrary(21, 22));
 		fireplaceArray[i] = between;
 	}  
-			for (var i = (208 + lev); i < (224 - lev); i ++) {
+			for (var i = (208 + lev - topbot + divinex); i < (224 - lev - topbot + divinex); i ++) {
    	between = Math.round(getRandomArbitrary(21, 22));
 		fireplaceArray[i] = between;
 	}  
-		for (var i = (192 + lev); i < (208 - lev); i ++) {
+		for (var i = (192 + lev - topbot + divinex); i < (208 - lev - topbot + divinex); i ++) {
    	between = Math.round(getRandomArbitrary(20, 21));
 		fireplaceArray[i] = between;
 	}  
-		for (var i = (176 + lev); i < (192 - lev); i ++) {
+		for (var i = (176 + lev - topbot + divinex); i < (192 - lev - topbot + divinex); i ++) {
    	between = Math.round(getRandomArbitrary(21, 22));
 		fireplaceArray[i] = between;
 	}  
-		for (var i = (160 + lev + top5); i < (176 - lev - top5); i ++) {
+		for (var i = (160 + lev + top5 - topbot + divine); i < (176 - lev - top5 - topbot + divine); i ++) {
    	between = Math.round(getRandomArbitrary(21, 22));
 		fireplaceArray[i] = between;
 	}  
-		for (var i = (144 + lev + top4); i < (160 - lev - top4); i ++) {
+		for (var i = (144 + lev + top4 - topbot + divine); i < (160 - lev - top4 - topbot + divine); i ++) {
    	between = Math.round(getRandomArbitrary(21, 22));
 		fireplaceArray[i] = between;
 	}  
-		for (var i = (128 + lev + top3); i < (144 - lev - top3); i ++) {
+		for (var i = (128 + lev + top3 - topbot + divine); i < (144 - lev - top3 - topbot + divine); i ++) {
+   	between = Math.round(getRandomArbitrary(5, 5));
+		fireplaceArray[i] = between;
+	}  /*
+		for (var i = (112 + lev+top2+ divine); i < (128 - lev - top2+ divine); i ++) {
+   	between = Math.round(getRandomArbitrary(21, 22));
+		fireplaceArray[i] = between;
+	}  
+		for (var i = (96 + lev + top1+ divine); i < (112 - lev - top1+ divine); i ++) {
+   	between = Math.round(getRandomArbitrary(4, 5));
+		fireplaceArray[i] = between;
+	}  */
+	  
+	}
+
+
+if (x > 0 && x < 15)
+	{
+		//+3
+		//+ 3
+		var lev = 3;
+		for (var i = (240 + lev - topbot + divinex); i < (256 - lev - topbot + divinex); i ++) {
+   	between = Math.round(getRandomArbitrary(22, 23));
+		fireplaceArray[i] = between;
+	}  
+		for (var i = (224 + lev - topbot + divinex); i < (239 - lev - topbot + divinex); i ++) {
+   	between = Math.round(getRandomArbitrary(22, 23));
+		fireplaceArray[i] = between;
+	}  
+			for (var i = (208 + lev - topbot + divinex); i < (224 - lev - topbot + divinex); i ++) {
+   	between = Math.round(getRandomArbitrary(22, 23));
+		fireplaceArray[i] = between;
+	}  
+		for (var i = (192 + lev - topbot + divinex); i < (208 - lev - topbot + divinex); i ++) {
+   	between = Math.round(getRandomArbitrary(22, 23));
+		fireplaceArray[i] = between;
+	}  
+		for (var i = (176 + lev - topbot + divinex); i < (192 - lev - topbot + divinex); i ++) {
+   	between = Math.round(getRandomArbitrary(22, 23));
+		fireplaceArray[i] = between;
+	}  
+		for (var i = (160 + lev + top5 - topbot + divine); i < (176 - lev - top5 - topbot + divine); i ++) {
+   	between = Math.round(getRandomArbitrary(22, 23));
+		fireplaceArray[i] = between;
+	}  
+		for (var i = (144 + lev + top4 - topbot + divine); i < (160 - lev -top4 - topbot + divine); i ++) {
+   	between = Math.round(getRandomArbitrary(22, 23));
+		fireplaceArray[i] = between;
+	}  
+		for (var i = (128 + lev + top3 - topbot + divine); i < (144 - lev - top3 - topbot + divine); i ++) {
+   	between = Math.round(getRandomArbitrary(22, 23));
+		fireplaceArray[i] = between;
+	}  
+		for (var i = (112 + lev + top2 - topbot + divine); i < (128 - lev - top2 - topbot + divine); i ++) {
+   	between = Math.round(getRandomArbitrary(21,21));
+		fireplaceArray[i] = between;
+	}  /*
+		for (var i = (96 + lev + top1+ divine); i < (112 - lev - top1+ divine); i ++) {
+   	between = Math.round(getRandomArbitrary(5, 5));
+		fireplaceArray[i] = between;
+	}  */
+	  
+	}
+	
+
+if (x > 0 && x < 15)
+	{
+		//+3
+		//+ 3
+		var lev = 4;
+		for (var i = (240 + lev - topbot + divinex); i < (256 - lev - topbot + divinex); i ++) {
+   	between = Math.round(getRandomArbitrary(23, 24));
+		fireplaceArray[i] = between;
+	}  
+		for (var i = (224 + lev - topbot + divinex); i < (239 - lev - topbot + divinex); i ++) {
+   	between = Math.round(getRandomArbitrary(23, 24));
+		fireplaceArray[i] = between;
+	}  
+			for (var i = (208 + lev - topbot + divinex); i < (224 - lev - topbot + divinex); i ++) {
+   	between = Math.round(getRandomArbitrary(23, 24));
+		fireplaceArray[i] = between;
+	}  
+		for (var i = (192 + lev - topbot + divinex); i < (208 - lev - topbot + divinex); i ++) {
+   	between = Math.round(getRandomArbitrary(23, 24));
+		fireplaceArray[i] = between;
+	}  
+		for (var i = (176 + lev - topbot + divinex); i < (192 - lev - topbot + divinex); i ++) {
+   	between = Math.round(getRandomArbitrary(23, 24));
+		fireplaceArray[i] = between;
+	}  
+		for (var i = (160 + lev + top5 - topbot + divine); i < (176 - lev - top5 - topbot + divine); i ++) {
+   	between = Math.round(getRandomArbitrary(23, 24));
+		fireplaceArray[i] = between;
+	}  
+		for (var i = (144 + lev + top4 - topbot + divine); i < (160 - lev -top4 - topbot + divine); i ++) {
+   	between = Math.round(getRandomArbitrary(23, 24));
+		fireplaceArray[i] = between;
+	}  
+		for (var i = (128 + lev + top3 - topbot + divine); i < (144 - lev - top3 - topbot + divine); i ++) {
+   	between = Math.round(getRandomArbitrary(23, 24));
+		fireplaceArray[i] = between;
+	}  
+		for (var i = (112 + lev + top2 - topbot + divine); i < (128 - lev - top2 - topbot + divine); i ++) {
+   	between = Math.round(getRandomArbitrary(20, 20));
+		fireplaceArray[i] = between;
+	}  /*
+		for (var i = (96 + lev + top1+ divine); i < (112 - lev - top1+ divine); i ++) {
+   	between = Math.round(getRandomArbitrary(23, 24));
+		fireplaceArray[i] = between;
+	}  */
+	  
+	}
+	
+	
+if (x > 0 && x < 15)
+	{
+		//+3
+		//+ 3
+		var lev = 5;
+		for (var i = (240 + lev - topbot + divinex); i < (256 - lev - topbot + divinex); i ++) {
+   	between = Math.round(getRandomArbitrary(23, 24));
+		fireplaceArray[i] = between;
+	}  
+		for (var i = (224 + lev+ divinex); i < (239 - lev+ divinex); i ++) {
+   	between = Math.round(getRandomArbitrary(24, 25));
+		fireplaceArray[i] = between;
+	}  
+			for (var i = (208 + lev - topbot + divinex); i < (224 - lev - topbot + divinex); i ++) {
+   	between = Math.round(getRandomArbitrary(24, 25));
+		fireplaceArray[i] = between;
+	}  
+		for (var i = (192 + lev+ divinex); i < (208 - lev+ divinex); i ++) {
+   	between = Math.round(getRandomArbitrary(24, 25));
+		fireplaceArray[i] = between;
+	}  
+		for (var i = (176 + lev - topbot + divinex); i < (192 - lev - topbot + divinex); i ++) {
+   	between = Math.round(getRandomArbitrary(24, 25));
+		fireplaceArray[i] = between;
+	}  
+		for (var i = (160 + lev + top5 - topbot + divine); i < (176 - lev - top5 - topbot + divine); i ++) {
+   	between = Math.round(getRandomArbitrary(24, 25));
+		fireplaceArray[i] = between;
+	}  
+		for (var i = (144 + lev + top4 - topbot + divine); i < (160 - lev -top4 - topbot + divine); i ++) {
+   	between = Math.round(getRandomArbitrary(24, 25));
+		fireplaceArray[i] = between;
+	}  
+		for (var i = (128 + lev + top3 - topbot + divine); i < (144 - lev - top3 - topbot + divine); i ++) {
+   	between = Math.round(getRandomArbitrary(24, 25));
+		fireplaceArray[i] = between;
+	}  
+		for (var i = (112 + lev + top2 - topbot + divine); i < (128 - lev - top2 - topbot + divine); i ++) {
+   	between = Math.round(getRandomArbitrary(24, 25));
+		fireplaceArray[i] = between;
+	}  /*
+		for (var i = (96 + lev + top1+ divine); i < (112 - lev - top1+ divine); i ++) {
+   	between = Math.round(getRandomArbitrary(23, 24));
+		fireplaceArray[i] = between;
+	}  */
+	  
+	}}
+ 
+ 
+ if (twofeettall == 1)
+ {
+ 
+   if (x > 0 && x < 15)
+	{
+		//+3
+		//+ 3
+		for (var i = (240 - 16); i < (256 - 16); i ++) {
+   	between = Math.round(getRandomArbitrary(2, 5));
+		fireplaceArray[i] = between;
+	}  
+		for (var i = (224 - 16); i < (239 - 16); i ++) {
+   	between = Math.round(getRandomArbitrary(2, 5));
+		fireplaceArray[i] = between;
+	}  
+			for (var i = (208 - 16); i < (224 - 16); i ++) {
+   	between = Math.round(getRandomArbitrary(2, 5));
+		fireplaceArray[i] = between;
+	}  
+		for (var i = (192 - 16); i < (208 - 16); i ++) {
+   	between = Math.round(getRandomArbitrary(2, 5));
+		fireplaceArray[i] = between;
+	}  
+		for (var i = (176 - 16); i < (192 - 16); i ++) {
+   	between = Math.round(getRandomArbitrary(2, 5));
+		fireplaceArray[i] = between;
+	}  
+		for (var i = (160 + top5 - 16); i < (176 - top5 - 16); i ++) {
+   	between = Math.round(getRandomArbitrary(2, 5));
+		fireplaceArray[i] = between;
+	}  
+		for (var i = (144 + top4 - 16 ); i < (160 - top4 - 16); i ++) {
+   	between = Math.round(getRandomArbitrary(2, 5));
+		fireplaceArray[i] = between;
+	}  
+		for (var i = (128 + top3  - 16); i < (144 - top3 - 16); i ++) {
+   	between = Math.round(getRandomArbitrary(2, 5));
+		fireplaceArray[i] = between;
+	}  
+		for (var i = (112 + top2 - 16); i < (128 - top2 - 16); i ++) {
+   	between = Math.round(getRandomArbitrary(2, 5));
+		fireplaceArray[i] = between;
+	}  
+		for (var i = (96 + top1 - 16); i < (112 - top1 - 16); i ++) {
+   	between = Math.round(getRandomArbitrary(3, 5));
+		fireplaceArray[i] = between;
+	}  
+	}
+	  ////ZZZ
+ if (x > 0 && x < 15)
+	{
+		//+3
+		//+ 3
+		var lev = 1;
+		for (var i = (240 + lev - 16); i < (256 - lev - 16); i ++) {
+   	between = Math.round(getRandomArbitrary(4, 5));
+		fireplaceArray[i] = between;
+	}  
+		for (var i = (224 + lev - 16); i < (239 - lev - 16); i ++) {
+   	between = Math.round(getRandomArbitrary(4, 5));
+		fireplaceArray[i] = between;
+	}  
+			for (var i = (208 + lev - 16); i < (224 - lev - 16); i ++) {
+   	between = Math.round(getRandomArbitrary(4, 5));
+		fireplaceArray[i] = between;
+	}  
+		for (var i = (192 + lev - 16); i < (208 - lev - 16); i ++) {
+   	between = Math.round(getRandomArbitrary(4, 5));
+		fireplaceArray[i] = between;
+	}  
+		for (var i = (176 + lev - 16); i < (192 - lev - 16); i ++) {
+   	between = Math.round(getRandomArbitrary(4, 5));
+		fireplaceArray[i] = between;
+	}  
+		for (var i = (160 + lev + top5 - 16); i < (176 - lev - top5 - 16); i ++) {
+   	between = Math.round(getRandomArbitrary(4, 5));
+		fireplaceArray[i] = between;
+	}  
+		for (var i = (144 + lev + top4 - 16); i < (160 - lev - top4 - 16); i ++) {
+   	between = Math.round(getRandomArbitrary(4, 5));
+		fireplaceArray[i] = between;
+	}  
+		for (var i = (128 + lev + top3 - 16); i < (144 - lev - top3 - 16); i ++) {
+   	between = Math.round(getRandomArbitrary(4, 5));
+		fireplaceArray[i] = between;
+	}  
+		for (var i = (112 + lev + top2 - 16); i < (128 - lev - top2 - 16); i ++) {
+   	between = Math.round(getRandomArbitrary(4, 5));
+		fireplaceArray[i] = between;
+	}  
+		for (var i = (96 + lev + top1 - 16); i < (112 - lev - top1 - 16); i ++) {
+   	between = Math.round(getRandomArbitrary(3, 5));
+		fireplaceArray[i] = between;
+	}  
+	  
+	}
+	
+/// SIDESZ
+	  ////ZZZ
+ if (x > 0 && x < 15)
+	{
+		//+3
+		//+ 3
+		var lev = 2;
+		for (var i = (240 + lev - 16); i < (256 - lev - 16); i ++) {
+   	between = Math.round(getRandomArbitrary(21, 22));
+		fireplaceArray[i] = between;
+	}  
+		for (var i = (224 + lev - 16); i < (239 - lev - 16); i ++) {
+   	between = Math.round(getRandomArbitrary(21, 22));
+		fireplaceArray[i] = between;
+	}  
+			for (var i = (208 + lev - 16); i < (224 - lev - 16); i ++) {
+   	between = Math.round(getRandomArbitrary(21, 22));
+		fireplaceArray[i] = between;
+	}  
+		for (var i = (192 + lev - 16); i < (208 - lev - 16); i ++) {
+   	between = Math.round(getRandomArbitrary(20, 21));
+		fireplaceArray[i] = between;
+	}  
+		for (var i = (176 + lev - 16); i < (192 - lev - 16); i ++) {
+   	between = Math.round(getRandomArbitrary(21, 22));
+		fireplaceArray[i] = between;
+	}  
+		for (var i = (160 + lev + top5 - 16); i < (176 - lev - top5 - 16); i ++) {
+   	between = Math.round(getRandomArbitrary(21, 22));
+		fireplaceArray[i] = between;
+	}  
+		for (var i = (144 + lev + top4 - 16); i < (160 - lev - top4 - 16); i ++) {
+   	between = Math.round(getRandomArbitrary(21, 22));
+		fireplaceArray[i] = between;
+	}  
+		for (var i = (128 + lev + top3 - 16); i < (144 - lev - top3 - 16); i ++) {
    	between = Math.round(getRandomArbitrary(5, 5));
 		fireplaceArray[i] = between;
 	}  /*
@@ -695,39 +1162,39 @@ if (x > 0 && x < 15)
 		//+3
 		//+ 3
 		var lev = 3;
-		for (var i = (240 + lev); i < (256 - lev); i ++) {
+		for (var i = (240 + lev - 16); i < (256 - lev - 16); i ++) {
    	between = Math.round(getRandomArbitrary(22, 23));
 		fireplaceArray[i] = between;
 	}  
-		for (var i = (224 + lev); i < (239 - lev); i ++) {
+		for (var i = (224 + lev - 16); i < (239 - lev - 16); i ++) {
    	between = Math.round(getRandomArbitrary(22, 23));
 		fireplaceArray[i] = between;
 	}  
-			for (var i = (208 + lev); i < (224 - lev); i ++) {
+			for (var i = (208 + lev - 16); i < (224 - lev - 16); i ++) {
    	between = Math.round(getRandomArbitrary(22, 23));
 		fireplaceArray[i] = between;
 	}  
-		for (var i = (192 + lev); i < (208 - lev); i ++) {
+		for (var i = (192 + lev - 16); i < (208 - lev - 16); i ++) {
    	between = Math.round(getRandomArbitrary(22, 23));
 		fireplaceArray[i] = between;
 	}  
-		for (var i = (176 + lev); i < (192 - lev); i ++) {
+		for (var i = (176 + lev - 16); i < (192 - lev - 16); i ++) {
    	between = Math.round(getRandomArbitrary(22, 23));
 		fireplaceArray[i] = between;
 	}  
-		for (var i = (160 + lev + top5); i < (176 - lev - top5); i ++) {
+		for (var i = (160 + lev + top5 - 16); i < (176 - lev - top5 - 16); i ++) {
    	between = Math.round(getRandomArbitrary(22, 23));
 		fireplaceArray[i] = between;
 	}  
-		for (var i = (144 + lev + top4); i < (160 - lev -top4); i ++) {
+		for (var i = (144 + lev + top4 - 16); i < (160 - lev -top4 - 16); i ++) {
    	between = Math.round(getRandomArbitrary(22, 23));
 		fireplaceArray[i] = between;
 	}  
-		for (var i = (128 + lev + top3); i < (144 - lev - top3); i ++) {
+		for (var i = (128 + lev + top3 - 16); i < (144 - lev - top3 - 16); i ++) {
    	between = Math.round(getRandomArbitrary(22, 23));
 		fireplaceArray[i] = between;
 	}  
-		for (var i = (112 + lev + top2); i < (128 - lev - top2); i ++) {
+		for (var i = (112 + lev + top2 - 16); i < (128 - lev - top2 - 16); i ++) {
    	between = Math.round(getRandomArbitrary(21,21));
 		fireplaceArray[i] = between;
 	}  /*
@@ -744,39 +1211,39 @@ if (x > 0 && x < 15)
 		//+3
 		//+ 3
 		var lev = 4;
-		for (var i = (240 + lev); i < (256 - lev); i ++) {
+		for (var i = (240 + lev - 16); i < (256 - lev - 16); i ++) {
    	between = Math.round(getRandomArbitrary(23, 24));
 		fireplaceArray[i] = between;
 	}  
-		for (var i = (224 + lev); i < (239 - lev); i ++) {
+		for (var i = (224 + lev - 16); i < (239 - lev - 16); i ++) {
    	between = Math.round(getRandomArbitrary(23, 24));
 		fireplaceArray[i] = between;
 	}  
-			for (var i = (208 + lev); i < (224 - lev); i ++) {
+			for (var i = (208 + lev - 16); i < (224 - lev - 16); i ++) {
    	between = Math.round(getRandomArbitrary(23, 24));
 		fireplaceArray[i] = between;
 	}  
-		for (var i = (192 + lev); i < (208 - lev); i ++) {
+		for (var i = (192 + lev - 16); i < (208 - lev - 16); i ++) {
    	between = Math.round(getRandomArbitrary(23, 24));
 		fireplaceArray[i] = between;
 	}  
-		for (var i = (176 + lev); i < (192 - lev); i ++) {
+		for (var i = (176 + lev - 16); i < (192 - lev - 16); i ++) {
    	between = Math.round(getRandomArbitrary(23, 24));
 		fireplaceArray[i] = between;
 	}  
-		for (var i = (160 + lev + top5); i < (176 - lev - top5); i ++) {
+		for (var i = (160 + lev + top5 - 16); i < (176 - lev - top5 - 16); i ++) {
    	between = Math.round(getRandomArbitrary(23, 24));
 		fireplaceArray[i] = between;
 	}  
-		for (var i = (144 + lev + top4); i < (160 - lev -top4); i ++) {
+		for (var i = (144 + lev + top4 - 16); i < (160 - lev -top4 - 16); i ++) {
    	between = Math.round(getRandomArbitrary(23, 24));
 		fireplaceArray[i] = between;
 	}  
-		for (var i = (128 + lev + top3); i < (144 - lev - top3); i ++) {
+		for (var i = (128 + lev + top3 - 16); i < (144 - lev - top3 - 16); i ++) {
    	between = Math.round(getRandomArbitrary(23, 24));
 		fireplaceArray[i] = between;
 	}  
-		for (var i = (112 + lev + top2); i < (128 - lev - top2); i ++) {
+		for (var i = (112 + lev + top2 - 16); i < (128 - lev - top2 - 16); i ++) {
    	between = Math.round(getRandomArbitrary(20, 20));
 		fireplaceArray[i] = between;
 	}  /*
@@ -793,39 +1260,39 @@ if (x > 0 && x < 15)
 		//+3
 		//+ 3
 		var lev = 5;
-		for (var i = (240 + lev); i < (256 - lev); i ++) {
+		for (var i = (240 + lev - 16); i < (256 - lev - 16); i ++) {
    	between = Math.round(getRandomArbitrary(23, 24));
 		fireplaceArray[i] = between;
 	}  
-		for (var i = (224 + lev); i < (239 - lev); i ++) {
+		for (var i = (224 + lev - 16); i < (239 - lev - 16); i ++) {
    	between = Math.round(getRandomArbitrary(24, 25));
 		fireplaceArray[i] = between;
 	}  
-			for (var i = (208 + lev); i < (224 - lev); i ++) {
+			for (var i = (208 + lev - 16); i < (224 - lev - 16); i ++) {
    	between = Math.round(getRandomArbitrary(24, 25));
 		fireplaceArray[i] = between;
 	}  
-		for (var i = (192 + lev); i < (208 - lev); i ++) {
+		for (var i = (192 + lev - 16); i < (208 - lev - 16); i ++) {
    	between = Math.round(getRandomArbitrary(24, 25));
 		fireplaceArray[i] = between;
 	}  
-		for (var i = (176 + lev); i < (192 - lev); i ++) {
+		for (var i = (176 + lev - 16); i < (192 - lev - 16); i ++) {
    	between = Math.round(getRandomArbitrary(24, 25));
 		fireplaceArray[i] = between;
 	}  
-		for (var i = (160 + lev + top5); i < (176 - lev - top5); i ++) {
+		for (var i = (160 + lev + top5 - 16); i < (176 - lev - top5 - 16); i ++) {
    	between = Math.round(getRandomArbitrary(24, 25));
 		fireplaceArray[i] = between;
 	}  
-		for (var i = (144 + lev + top4); i < (160 - lev -top4); i ++) {
+		for (var i = (144 + lev + top4 - 16); i < (160 - lev -top4 - 16); i ++) {
    	between = Math.round(getRandomArbitrary(24, 25));
 		fireplaceArray[i] = between;
 	}  
-		for (var i = (128 + lev + top3); i < (144 - lev - top3); i ++) {
+		for (var i = (128 + lev + top3 - 16); i < (144 - lev - top3 - 16); i ++) {
    	between = Math.round(getRandomArbitrary(24, 25));
 		fireplaceArray[i] = between;
 	}  
-		for (var i = (112 + lev + top2); i < (128 - lev - top2); i ++) {
+		for (var i = (112 + lev + top2 - 16); i < (128 - lev - top2 - 16); i ++) {
    	between = Math.round(getRandomArbitrary(24, 25));
 		fireplaceArray[i] = between;
 	}  /*
@@ -834,7 +1301,9 @@ if (x > 0 && x < 15)
 		fireplaceArray[i] = between;
 	}  */
 	  
-	}
+	}}
+ 
+
 	//woodsyorig
 
    /*
@@ -1108,7 +1577,7 @@ fireplaceArray[spark1] = 4;
   
 function sparkgenerator(mybully, spark, burn) {
 var spark1 = spark;
-var betweenx = Math.round(getRandomArbitrary(6, 8));
+var betweenx = Math.round(getRandomArbitrary(24,25));
 if (mybully < 9)
 {
 if (mybully == 0)
@@ -1149,7 +1618,7 @@ if (mybully < 9 && mybully > 5)
 
 if (dark1 == 3)
 {
-var darkrand = Math.round(getRandomArbitrary(244, 252));
+var darkrand = Math.round(getRandomArbitrary(241, 254));
 darkrem1 = darkrand;
 darky1 = darkrand;
 }
@@ -1163,7 +1632,7 @@ if (dark1 > 14)
 
 if (dark2 == 3)
 {
-var darkrand2 = Math.round(getRandomArbitrary(244, 252));
+var darkrand2 = Math.round(getRandomArbitrary(241, 254));
 darkrem2 = darkrand2;
 darky2 = darkrand2;
 }
@@ -1177,7 +1646,7 @@ if (dark2 > 14)
 
 if (dark3 == 3)
 {
-var darkrand3 = Math.round(getRandomArbitrary(244, 252));
+var darkrand3 = Math.round(getRandomArbitrary(241, 254));
 darkrem3 = darkrand3;
 darky3 = darkrand3;
 }
@@ -1191,7 +1660,7 @@ if (dark3 > 14)
 
 if (dark4 == 3)
 {
-var darkrand4 = Math.round(getRandomArbitrary(244, 252));
+var darkrand4 = Math.round(getRandomArbitrary(241, 254));
 darkrem4 = darkrand4;
 darky4 = darkrand4;
 }
@@ -1205,7 +1674,7 @@ if (dark4 > 14)
 
 if (dark5 == 3)
 {
-var darkrand5 = Math.round(getRandomArbitrary(244, 252));
+var darkrand5 = Math.round(getRandomArbitrary(241, 254));
 darkrem5 = darkrand5;
 darky5 = darkrand5;
 }
@@ -1219,7 +1688,7 @@ if (dark5 > 14)
 
 if (dark6 == 3)
 {
-var darkrand6 = Math.round(getRandomArbitrary(244, 252));
+var darkrand6 = Math.round(getRandomArbitrary(241, 254));
 darkrem6 = darkrand6;
 darky6 = darkrand6;
 }
@@ -1233,7 +1702,7 @@ if (dark6 > 14)
 
 if (dark7 == 3)
 {
-var darkrand7 = Math.round(getRandomArbitrary(244, 252));
+var darkrand7 = Math.round(getRandomArbitrary(241, 254));
 darkrem7 = darkrand7;
 darky7 = darkrand7;
 }
@@ -1246,7 +1715,7 @@ if (dark7 > 14)
 
 if (dark8 == 3)
 {
-var darkrand8 = Math.round(getRandomArbitrary(244, 252));
+var darkrand8 = Math.round(getRandomArbitrary(241, 254));
 darkrem8 = darkrand8;
 darky8 = darkrand8;
 }
@@ -1260,7 +1729,7 @@ if (dark8 > 14)
 
 if (dark1z == 3)
 {
-var darkrandz = Math.round(getRandomArbitrary(244, 252));
+var darkrandz = Math.round(getRandomArbitrary(241, 254));
 darkrem1z = darkrandz;
 darky1z = darkrandz;
 }
@@ -1274,7 +1743,7 @@ if (dark1z > 26)
 
 if (dark2z == 3)
 {
-var darkrand2z = Math.round(getRandomArbitrary(244, 252));
+var darkrand2z = Math.round(getRandomArbitrary(241, 254));
 darkrem2z = darkrand2z;
 darky2z = darkrand2z;
 }
@@ -1288,7 +1757,7 @@ if (dark2z > 26)
 
 if (dark3z == 3)
 {
-var darkrand3z = Math.round(getRandomArbitrary(244, 252));
+var darkrand3z = Math.round(getRandomArbitrary(241, 254));
 darkrem3z = darkrand3z;
 darky3z = darkrand3z;
 }
@@ -1302,7 +1771,7 @@ if (dark3z > 26)
 
 if (dark4z == 3)
 {
-var darkrand4z = Math.round(getRandomArbitrary(244, 252));
+var darkrand4z = Math.round(getRandomArbitrary(241, 254));
 darkrem4z = darkrand4z;
 darky4z = darkrand4z;
 }
@@ -1316,7 +1785,7 @@ if (dark4z > 26)
 
 if (dark5z == 3)
 {
-var darkrand5z = Math.round(getRandomArbitrary(244, 252));
+var darkrand5z = Math.round(getRandomArbitrary(241, 254));
 darkrem5z = darkrand5z;
 darky5z = darkrand5z;
 }
@@ -1330,7 +1799,7 @@ if (dark5z > 26)
 
 if (dark6z == 3)
 {
-var darkrand6z = Math.round(getRandomArbitrary(244, 252));
+var darkrand6z = Math.round(getRandomArbitrary(241, 254));
 darkrem6z = darkrand6z;
 darky6z = darkrand6z;
 }
@@ -1344,7 +1813,7 @@ if (dark6z > 26)
 
 if (dark7z == 3)
 {
-var darkrand7z = Math.round(getRandomArbitrary(244, 252));
+var darkrand7z = Math.round(getRandomArbitrary(241, 254));
 darkrem7z = darkrand7z;
 darky7z = darkrand7z;
 }
@@ -1357,7 +1826,7 @@ if (dark7z > 26)
 
 if (dark8z == 3)
 {
-var darkrand8z = Math.round(getRandomArbitrary(244, 252));
+var darkrand8z = Math.round(getRandomArbitrary(241, 254));
 darkrem8z = darkrand8z;
 darky8z = darkrand8z;
 }
@@ -1367,11 +1836,13 @@ if (dark8z > 26)
 {
   dark8z = 3;
 }
-//HOLD WOOD HOLY
+//HOLD WOOD HOLY PIT
+if (slowwood == 0)
+{
   		for (var i = 240; i < 256; i ++) {
 		
 		
-	between = Math.round(getRandomArbitrary(13, 14));
+	between = Math.round(getRandomArbitrary(28, 31));
 		
 		
 		holdwoodsy = between;
@@ -1382,35 +1853,71 @@ if (dark8z > 26)
 	
 		calarr1++;
 	} 
- 		for (var i = 227; i < 239; i ++) {
+	calarr1 = 0;
+  for (var i = 225; i < 239; i ++) {
 		
 		
-	between = Math.round(getRandomArbitrary(14, 15));
+	between = Math.round(getRandomArbitrary(28, 31));
 		
 		
 		holdwoodsy = between;
-		holdwoodsyarr[calarr1] = holdwoodsy;
+		holdwoodsyarr2[calarr1] = holdwoodsy;
 		
+		
+		fireplaceArray[i] = holdwoodsyarr2[calarr1];
+	
+		calarr1++;
+	} 
+	calarr1 = 0;
+	for (var i = 217; i < 220; i ++) {
+		
+		
+	between = Math.round(getRandomArbitrary(28, 31));
+		
+		
+		holdwoodsy = between;
+		holdwoodsyarr3[calarr1] = holdwoodsy;
+		
+		
+		fireplaceArray[i] = holdwoodsyarr3[calarr1];
+	
+		calarr1++;
+	} 
+		calarr1 = 0;
+}
+if (slowwood < 15)
+{
+  		for (var i = 240; i < 256; i ++) {
+
+
 		
 		fireplaceArray[i] = holdwoodsyarr[calarr1];
 	
 		calarr1++;
 	} 
- 		for (var i = 217; i < 219; i ++) {
+		calarr1 = 0;
+  for (var i = 225; i < 239; i ++) {
 		
+
 		
-	between = Math.round(getRandomArbitrary(15, 15));
-		
-		
-		holdwoodsy = between;
-		holdwoodsyarr[calarr1] = holdwoodsy;
-		
-		
-		fireplaceArray[i] = holdwoodsyarr[calarr1];
+		fireplaceArray[i] = holdwoodsyarr2[calarr1];
 	
 		calarr1++;
-	} 	
+	} 
+		calarr1 = 0;
+	for (var i = 217; i < 220; i ++) {
+		
+
+		
+		fireplaceArray[i] = holdwoodsyarr3[calarr1];
 	
+		calarr1++;
+	} 
+		calarr1 = 0;
+}
+slowwood++;
+if (slowwood > 14)
+slowwood = 0;
 // SPARKz
 if (sparks1 == 0)
 {
@@ -1533,19 +2040,17 @@ function fireplaceDraw() {
 		for (var y = 0; y < 16; y ++) {
 			var id = fireplaceArray[(y << 4) + x];
 			var id2 = fireplaceArray[(y << 4) + x];
-			var hues = ['0', '21', '20', '15', '0', '55', '50', '50', '50', '60', '70', '35', '35', '35', '35', '35', '35', '35', '35', '35', '55', '60', '65', '70', '75', '80']; 
-			var huesx = ['0', '21', '20', '15', '54', '56', '58', '60', '63', '65', '67', '22', '19', '20', '22', '23', '24', '25', '26', '45']; 
-		
-			var sats = ['0%', '100%', '100%', '100%', '100%', '100%', '100%', '100%', '100%', '100%', '100%', '40%', '20%', '21%','22%', '23%', '24%', '%55', '100%', '100%', '100%', '100%', '100%', '100%', '100%', '100%', '100%'];
+			var hues = ['0', '21', '20', '10', '0', '24', '0', '', '', '', '', '', '', '', '', '', '', '', '', '20', '30', '35', '40', '45', '51', '56', '56', '24', '22', '19','23', '24', '22']; 
+			var sats = ['0%', '100%', '100%', '100%', '0%', '100%', '', '', '', '', '', '', '','', '', '', '', '', '99%', '100%', '100%', '99%', '100%', '99%', '99%', '99%', '58%', '51%', '58%' ,'54%' , '56%', '51%'];
+		  fireplaceColors = ['0%', '0%', '0%', '0%', '0%', '45%', '', '', '', '', '', '', '', '', '', '', '', '', '', '15%', '55%','55%', '55%', '55%', '55%', '55%', '73%', '10%', '14%', '8%', '13%', '11%', '13%'];
 			
       var modhue = "";
       var modsats = "";
       var modlight = "";
       var originalhue = hues[id];
-      var originalhuex = huesx[id];
       var originalsats = sats[id];
       var originallightness = fireplaceColors[id];
-		  modhue = originalhue - 24;
+		  modhue = originalhue;
 		  modsats = originalsats;
 		  modlight = originallightness;
   
