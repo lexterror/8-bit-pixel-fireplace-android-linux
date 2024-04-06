@@ -267,7 +267,7 @@ var randomheartbeat = 0;
 		 var zig =0;
 		 var zag = 0;
 		 var twofeettall = 0;
-		 
+		 var holdwoodsyarr4 = [];
 		 
 		 
 		 
@@ -712,7 +712,7 @@ divinex = Math.round(getRandomArbitrary(-1,1));
 divinex = Math.round(getRandomArbitrary(0,1));
 }
 
-var topbot = 16;
+var topbot = 32;
 
   if (twofeettall == 0)
  {
@@ -1593,7 +1593,7 @@ fireplaceArray[spark1] = 4;
 function sparkgenerator(mybully, spark, burn) {
 var spark1 = spark;
 var betweenx = Math.round(getRandomArbitrary(24,25));
-if (mybully < 9)
+if (mybully < 12)
 {
 if (mybully == 0)
 {
@@ -1625,6 +1625,17 @@ if (mybully < 9 && mybully > 5)
 //  fireplaceArray[burn] = 1;
   fireplaceArray[spark1] = betweenx;
 }
+
+if (mybully == 9 || mybully == 10 || mybully == 11)
+spark1 = spark1 - 48;
+//burn = spark - 16;
+if (mybully < 12 && mybully > 8)
+{
+//  fireplaceArray[burn] = 1;
+  fireplaceArray[spark1] = betweenx;
+}
+
+
 }
 }
 
@@ -1884,10 +1895,10 @@ if (slowwood == 0)
 		calarr1++;
 	} 
 	calarr1 = 0;
-	for (var i = 217; i < 220; i ++) {
+	for (var i = 210; i < 221; i ++) {
 		
 		
-	between = Math.round(getRandomArbitrary(27, 33));
+	between = Math.round(getRandomArbitrary(34, 41));
 		
 		
 		holdwoodsy = between;
@@ -1899,6 +1910,25 @@ if (slowwood == 0)
 		calarr1++;
 	} 
 		calarr1 = 0;
+		
+	for (var i = 200; i < 204; i ++) {
+		
+		
+	between = Math.round(getRandomArbitrary(34, 41));
+		
+		
+		holdwoodsy = between;
+		holdwoodsyarr4[calarr1] = holdwoodsy;
+		
+		
+		fireplaceArray[i] = holdwoodsyarr4[calarr1];
+	
+		calarr1++;
+	} 
+		calarr1 = 0;		
+		
+		
+		
 }
 if (slowwood < 15)
 {
@@ -1920,7 +1950,7 @@ if (slowwood < 15)
 		calarr1++;
 	} 
 		calarr1 = 0;
-	for (var i = 217; i < 220; i ++) {
+	for (var i = 210; i < 221; i ++) {
 		
 
 		
@@ -1929,6 +1959,19 @@ if (slowwood < 15)
 		calarr1++;
 	} 
 		calarr1 = 0;
+		
+for (var i = 200; i < 204; i ++) {
+		
+		
+	
+		fireplaceArray[i] = holdwoodsyarr4[calarr1];
+	
+		calarr1++;
+	} 
+		calarr1 = 0;		
+				
+		
+		
 }
 slowwood++;
 if (slowwood > 14)
@@ -1942,7 +1985,7 @@ sparky1 = sparks1rand;
 }
 sparkgenerator(sparks1, sparky1, rememberburn1);
 sparks1++;
-if (sparks1 > 9)
+if (sparks1 > 11)
 {
   sparks1 = 0;
 }
@@ -1955,7 +1998,7 @@ sparky2 = sparks2rand;
 }
 sparkgenerator(sparks2, sparky2, rememberburn2);
 sparks2++;
-if (sparks2 > 12)
+if (sparks2 > 11)
 {
   sparks2 = 0;
 }
@@ -1969,7 +2012,7 @@ sparky3 = sparks3rand;
 }
 sparkgenerator(sparks3, sparky3, rememberburn3);
 sparks3++;
-if (sparks3 > 15)
+if (sparks3 > 11)
 {
   sparks3 = 0;
 }
@@ -1981,7 +2024,7 @@ sparky4 = sparks4rand;
 }
 sparkgenerator(sparks4, sparky4, rememberburn4);
 sparks4++;
-if (sparks4 > 18)
+if (sparks4 > 11)
 {
   sparks4 = 0;
 }
@@ -1994,7 +2037,7 @@ sparky5 = sparks5rand;
 }
 sparkgenerator(sparks5, sparky5, rememberburn5);
 sparks5++;
-if (sparks5 > 21)
+if (sparks5 > 11)
 {
   sparks5 = 0;
 }
@@ -2007,7 +2050,7 @@ sparky6 = sparks6rand;
 }
 sparkgenerator(sparks6, sparky6, rememberburn6);
 sparks6++;
-if (sparks6 > 24)
+if (sparks6 > 11)
 {
   sparks6 = 0;
 }
@@ -2019,7 +2062,7 @@ sparky7 = sparks7rand;
 }
 sparkgenerator(sparks7, sparky7, rememberburn7);
 sparks7++;
-if (sparks7 > 27)
+if (sparks7 > 11)
 {
   sparks7 = 0;
 }
@@ -2032,7 +2075,7 @@ sparky8 = sparks8rand;
 }
 sparkgenerator(sparks8, sparky8, rememberburn8);
 sparks8++;
-if (sparks8 > 30)
+if (sparks8 > 11)
 {
   sparks8 = 0;
 }
@@ -2055,9 +2098,9 @@ function fireplaceDraw() {
 		for (var y = 0; y < 16; y ++) {
 			var id = fireplaceArray[(y << 4) + x];
 			var id2 = fireplaceArray[(y << 4) + x];
-			var hues = ['0', '21', '20', '10', '0', '29', '0', '', '', '', '', '', '', '', '', '', '', '', '', '341', '29', '34', '39', '43', '48', '53','57', '24', '22', '19','23', '24', '22', '18', '28']; 
-			var sats = ['0%', '100%', '100%', '100%', '0%', '100%', '', '', '', '', '', '', '','', '', '', '', '', '98%', '100%', '100%', '100%', '100%', '100%', '100%','100%', '55%', '51%', '58%' ,'54%' , '56%', '51%','55%','63%'];
-		  fireplaceColors = ['0%', '0%', '0%', '0%', '0%', '50%', '', '', '', '', '', '', '', '', '', '', '', '', '', '15%', '50%', '50%', '50%', '50%', '50%', '50%','50%', '10%', '14%', '8%', '13%', '11%', '13%', '9%','7%'];
+			var hues = ['0', '21', '20', '10', '0', '29', '0', '', '', '', '', '', '', '', '', '', '', '', '', '341', '29', '34', '39', '43', '48', '53','57', '24', '22', '19','23', '24', '22', '18', '24', '24', '22', '19','23', '24', '22', '18', '18']; 
+			var sats = ['0%', '100%', '100%', '100%', '0%', '100%', '', '', '', '', '', '', '','', '', '', '', '', '98%', '100%', '100%', '100%', '100%', '100%', '100%','100%', '55%', '51%', '58%' ,'54%' , '56%', '51%','55%','55%', '55%', '51%', '58%' ,'54%' , '56%', '51%','55%', '55%'];
+		  fireplaceColors = ['0%', '0%', '0%', '0%', '0%', '50%', '', '', '', '', '', '', '', '', '', '', '', '', '', '15%', '50%', '50%', '50%', '50%', '50%', '50%','50%', '10%', '14%', '8%', '13%', '11%', '13%', '9%','5%', '5%', '7%', '4%', '6%', '5%', '6%', '4%', '4%'];
 			
       var modhue = "";
       var modsats = "";
