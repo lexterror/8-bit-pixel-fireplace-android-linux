@@ -506,7 +506,7 @@ if (bg8 > 16)
 }  
   
   
-	for (var x = (2); x < (14); x++) {
+	for (var x = (0); x < (16); x++) {
 		for (var y = (0 + wavvy); y < (16); y++) {
 			var id = fireplaceArray[(y << 4 + gotcha) + x + swayx];
 			if (id == 1 || id == 2 || id == 3)  {
@@ -1496,6 +1496,21 @@ spark1 = spark1 - 208;
 fireplaceArray[spark1] = 19;
 }
 
+if (mybully == 14)
+{
+//burn = spark;
+spark1 = spark1 - 224;
+//fireplaceArray[burn] = 1;
+fireplaceArray[spark1] = 19;
+}
+
+if (mybully == 15)
+{
+//burn = spark;
+spark1 = spark1 - 240;
+//fireplaceArray[burn] = 1;
+fireplaceArray[spark1] = 19;
+}
 
 }
 }
@@ -2040,9 +2055,9 @@ function fireplaceDraw() {
 		for (var y = 0; y < 16; y ++) {
 			var id = fireplaceArray[(y << 4) + x];
 			var id2 = fireplaceArray[(y << 4) + x];
-			var hues = ['0', '21', '20', '10', '0', '35', '0', '', '', '', '', '', '', '', '', '', '', '', '', '20', '40', '40', '43', '45', '51', '56', '56', '24', '22', '19','23', '24', '22']; 
-			var sats = ['0%', '100%', '100%', '100%', '0%', '100%', '', '', '', '', '', '', '','', '', '', '', '', '99%', '100%', '100%', '99%', '100%', '99%', '99%', '99%', '58%', '51%', '58%' ,'54%' , '56%', '51%'];
-		  fireplaceColors = ['0%', '0%', '0%', '0%', '0%', '45%', '', '', '', '', '', '', '', '', '', '', '', '', '', '15%', '55%','55%', '55%', '55%', '55%', '55%', '73%', '10%', '14%', '8%', '13%', '11%', '13%'];
+			var hues = ['0', '21', '20', '10', '0', '34', '0', '', '', '', '', '', '', '', '', '', '', '', '', '18', '41', '46', '43', '45', '51', '56', '59', '24', '22', '19','23', '24', '22']; 
+			var sats = ['0%', '100%', '100%', '100%', '0%', '98%', '', '', '', '', '', '', '','', '', '', '', '', '98%', '99%', '99%', '99%', '100%', '99%', '99%', '84%', '58%', '51%', '58%' ,'54%' , '56%', '51%'];
+		  fireplaceColors = ['0%', '0%', '0%', '0%', '0%', '55%', '', '', '', '', '', '', '', '', '', '', '', '', '', '55%', '54%','54%', '55%', '55%', '55%', '55%', '76%', '10%', '14%', '8%', '13%', '11%', '13%'];
 			
       var modhue = "";
       var modsats = "";
@@ -2053,7 +2068,37 @@ function fireplaceDraw() {
 		  modhue = originalhue;
 		  modsats = originalsats;
 		  modlight = originallightness;
-  
+      
+      if (y == 0)
+      {
+      var modl = originallightness.replace("%", "");
+      var modl2 = parseInt(modl) - 50;
+		  modlight = modl2.toString() + "%";
+      }
+      if (y == 1)
+      {
+      var modl = originallightness.replace("%", "");
+      var modl2 = parseInt(modl) - 40;
+		  modlight = modl2.toString() + "%";
+      }
+      if (y == 2)
+      {
+      var modl = originallightness.replace("%", "");
+      var modl2 = parseInt(modl) - 30;
+		  modlight = modl2.toString() + "%";
+      }
+      if (y == 3)
+      {
+      var modl = originallightness.replace("%", "");
+      var modl2 = parseInt(modl) - 20;
+		  modlight = modl2.toString() + "%";
+      }
+      if (y == 4)
+      {
+      var modl = originallightness.replace("%", "");
+      var modl2 = parseInt(modl) - 10;
+		  modlight = modl2.toString() + "%";
+      }
  /*
   
       if (y == breaky)
@@ -2103,10 +2148,10 @@ function fireplaceDraw() {
 
 			ctx.fillStyle = 'hsl(' + modhue+	','+ modsats +', ' + modlight + ')';
 			ctx.fillRect(fireplacePosition + x * poligon, fireplacePositionv + y * poligon, poligon + 1, poligon + 1);
-			breaky++;
+		
      
 		}
-	breakr++;
+
 	}
 }
 /*
