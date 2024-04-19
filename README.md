@@ -23,7 +23,7 @@ DEB/APK is in the release section of this repository
 
 Preview:
 
-![az_recorder_20240417_031153-ezgif com-video-to-gif-converter](https://github.com/lexterror/8-bit-pixel-fireplace-android-linux/assets/16135535/a9aa43b6-5c5e-48f7-908e-7d38045b8402)
+![az_recorder_20240419_183321-ezgif com-video-to-gif-converter](https://github.com/lexterror/8-bit-pixel-fireplace-android-linux/assets/16135535/22288a7b-21a2-4d61-8d64-7c95402bf892)
 
 
 
