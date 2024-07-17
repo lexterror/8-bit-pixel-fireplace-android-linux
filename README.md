@@ -23,6 +23,9 @@ DEB/APK is in the release section of this repository
 
 Preview:
 
+
+![az_recorder_20240716_221716-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/468e8c7c-aa54-4316-8d55-67f5ef772e47)
+
 ![Screenshot_20240716-214346](https://github.com/user-attachments/assets/035578a3-6000-4aee-9f1d-372cd4acfc45)
 
 
